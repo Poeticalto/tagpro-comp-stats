@@ -6,23 +6,21 @@
 	},
 	"Majors": {
 		"Radius": {
+			"ALL CAPS": "MAC",
+			"Balls on Parade": "MBOP",
+			"CreoKoalas": "MCRK",
+			"Holy Rollers": "MHR"
 			"Mickey Mouse Poperation": "MMMP",
-			"Red Hot Chili Poppers": "RHCP",
-			"She Wants the KD": "MSKD",
-			"Stranger Pings": "MSRP",
+			"Soviet Ballers": "MSVB",
 			"TC Jukes": "MTCJ",
-			"The CreoKoalas": "MCRK",
 			"The United Pingdom": "MGBR"
-		},
-		"Pi": {
-			"Pi-Curious": "MPIC"
 		},
 		"Origin": {
 			"Chennai Super Pings": "MCSP"
 		},
 		"Centra": {
 			"Centra of Attention": "MCOA",
-			"The Good Gravy Boat": "MGGB",
+			"Red Hot Chili Poppers": "RHCP",
 			"The Holy Seehawks": "MTHS"
 		}
 	},
@@ -49,7 +47,7 @@
 		}
 	},
 	"NLTP-A": {
-		"Radius": {
+"Radius": {
 			"Au Neutral": "TAUN",
 			"Gate Keepers": "TGTK",
 			"Rutabaga": "TRTB",
