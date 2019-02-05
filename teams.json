@@ -1,33 +1,33 @@
 {
-	"Leagues": ["None", "NA Competitive", "Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders", "NA Tournaments", "TToC", "RCL", "CLTP", "Pipberry", "EU Competitive", "ECLTP"],
-	"Majors": [
-		["", "Radius", "ALL CAPS", "Balls on Parade", "CreoKoalas", "Mickey Mouse Poperation", "Soviet Ballers", "The United Pingdom", "Pi", "Holy Rollers", "Origin", "TC Jukes", "Sphere", "Chennai Super Pings", "Centra", "Centra of Attention", "Red Hot Chili Poppers", "The Holy Seehawks"],
-		["Radius", "Origin", "Pi", "Sphere", "Centra"],
-		["", "", "MAC", "MBOP", "MCRK", "MMMP", "MSVB", "MGBR", "", "MHR", "", "MTCJ", "", "MCSP", "", "MCOA", "RHCP", "MTHS"]
-	],
-	"Minors": [
-		["", "Radius", "Balls on Parade", "Blue Hot Chili Poppers", "Boostnia and Herzegovina", "CreoDudes", "Minnie Mouse Poperation", "SMALL CAPS", "Ballshevik Revolution", "Pi", "Holy Rollers", "Origin", "Pings XI Punjab", "TC Jukes", "Centra", "Respawnsiballs", "Seattle Superspawnics"],
-		["Radius", "Origin", "Pi", "Centra"],
-		["", "", "NBOP", "BHCP", "NBIH", "NCRD", "NMMP", "NSC", "NBSR", "", "NHR", "", "NPXI", "NTCJ", "Centra", "NRSP", "NSSP"]
-	],
-	"NLTP-A": [
-		["", "Radius", "Doggy's Tile", "Flairbnb", "POGGERS", "Return of the Jedi", "The Probots", "Origin", "Ballsagna", "Over The Pants Handoffs", "Pequeños Pandas", "WCYDinos", "Pi", "Pi-Curious", "Centra", "SLA", "The Land Before Timers"],
-		["Radius", "Origin", "Pi", "Centra"],
-		["", "", "ADST", "AFLB", "APOG", "ARTJ", "APRO", "", "ABOY", "AOPH", "APQP", "ADNO", "", "APIC", "", "ASLA", "ALBT"]
-	],
-	"NLTP-B": [
-		["", "Radius", "Doggy's Tile", "Flairbnb", "POGGERS", "Return of the Jedi", "The Probots", "Origin", "Ballsagna", "Over The Pants Handoffs", "Pequeños Pandas", "WCYDinos", "Pi", "Pi-Curious", "Centra", "SLA", "The Land Before Timers"],
-		["Radius", "Origin", "Pi", "Centra"],
-		["", "", "BDST", "BFLB", "BPOG", "BRTJ", "BPRO", "", "BBOY", "BOPH", "BPQP", "BDNO", "", "BPIC", "", "BSLA", "BLBT"]
-	],
-	"US Contenders": [
-		["", "Group A", "Team 3", "Yikes", "Jukes and Cats Alumni", "Pi-romaniacs", "The Hard D Boys", "Group B", "Bubble Balls", "OGPHO", "Sippin' on Jin and Jukes", "Ballchester United", "TC Jukes", "Group C", "Death Cap for Cutie", "Why So Serious?", "Gasping for Flair", "The Powerup Girls", "Los Balludos"],
-		["Group A", "Group B", "Group C"],
-		["", "", "UTM3", "UYKS", "UJCA", "UPIR", "UHDB", "", "UBUB", "UOPH", "USJJ", "UBLC", "UTCJ", "", "UDCC", "UWSS", "UGFF", "UPUP", "ULSB"]
-	],
-	"ECLTP": [
-		["", "Ballmere City", "Big Chungus", "Dog Strangles", "Janusze", "Lagetti", "Limitless", "Rickrollers", "Stranger Tags"],
-		[],
-		["", "CBMC", "CBGC", "CDOG", "CJNZ", "CLAB", "CLMT", "CRKR", "CSRT"]
-	]
+    "Leagues": ["None", "NA Competitive", "Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders", "NA Tournaments", "TToC", "RCL", "CLTP", "Pipberry", "EU Competitive", "ECLTP"],
+    "Majors": [
+        ["", "Radius", "ALL CAPS", "Balls on Parade", "CreoKoalas", "Mickey Mouse Poperation", "Soviet Ballers", "The United Pingdom", "Pi", "Holy Rollers", "Origin", "TC Jukes", "Sphere", "Chennai Super Pings", "Centra", "Centra of Attention", "Red Hot Chili Poppers", "The Holy Seehawks"],
+        ["Radius", "Origin", "Pi", "Sphere", "Centra"],
+        ["", "", "MAC", "MBOP", "MCRK", "MMMP", "MSVB", "MGBR", "", "MHR", "", "MTCJ", "", "MCSP", "", "MCOA", "RHCP", "MTHS"]
+    ],
+    "Minors": [
+        ["", "Radius", "Balls on Parade", "Blue Hot Chili Poppers", "Boostnia and Herzegovina", "CreoDudes", "Minnie Mouse Poperation", "SMALL CAPS", "Ballshevik Revolution", "Pi", "Holy Rollers", "Origin", "Pings XI Punjab", "TC Jukes", "Centra", "Respawnsiballs", "Seattle Superspawnics"],
+        ["Radius", "Origin", "Pi", "Centra"],
+        ["", "", "NBOP", "BHCP", "NBIH", "NCRD", "NMMP", "NSC", "NBSR", "", "NHR", "", "NPXI", "NTCJ", "Centra", "NRSP", "NSSP"]
+    ],
+    "NLTP-A": [
+        ["", "Radius", "Doggy's Tile", "Flairbnb", "POGGERS", "Return of the Jedi", "The Probots", "Origin", "Ballsagna", "Over The Pants Handoffs", "Pequeños Pandas", "WCYDinos", "Pi", "Pi-Curious", "Centra", "SLA", "The Land Before Timers"],
+        ["Radius", "Origin", "Pi", "Centra"],
+        ["", "", "ADST", "AFLB", "APOG", "ARTJ", "APRO", "", "ABOY", "AOPH", "APQP", "ADNO", "", "APIC", "", "ASLA", "ALBT"]
+    ],
+    "NLTP-B": [
+        ["", "Radius", "Doggy's Tile", "Flairbnb", "POGGERS", "Return of the Jedi", "The Probots", "Origin", "Ballsagna", "Over The Pants Handoffs", "Pequeños Pandas", "WCYDinos", "Pi", "Pi-Curious", "Centra", "SLA", "The Land Before Timers"],
+        ["Radius", "Origin", "Pi", "Centra"],
+        ["", "", "BDST", "BFLB", "BPOG", "BRTJ", "BPRO", "", "BBOY", "BOPH", "BPQP", "BDNO", "", "BPIC", "", "BSLA", "BLBT"]
+    ],
+    "US Contenders": [
+        ["", "Group A", "Team 3", "Yikes", "Jukes and Cats Alumni", "Pi-romaniacs", "The Hard D Boys", "Group B", "Bubble Balls", "OGPHO", "Sippin' on Jin and Jukes", "Ballchester United", "TC Jukes", "Group C", "Death Cap for Cutie", "Why So Serious?", "Gasping for Flair", "The Powerup Girls", "Los Balludos"],
+        ["Group A", "Group B", "Group C"],
+        ["", "", "UTM3", "UYKS", "UJCA", "UPIR", "UHDB", "", "UBUB", "UOPH", "USJJ", "UBLC", "UTCJ", "", "UDCC", "UWSS", "UGFF", "UPUP", "ULSB"]
+    ],
+    "ECLTP": [
+        ["", "Ballmere City", "Big Chungus", "Dog Strangles", "Janusze", "Lagetti", "Limitless", "Rickrollers", "Stranger Tags"],
+        [],
+        ["", "CBMC", "CBGC", "CDOG", "CJNZ", "CLAB", "CLMT", "CRKR", "CSRT"]
+    ]
 }
