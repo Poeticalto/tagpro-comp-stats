@@ -1,125 +1,125 @@
 {
-	"Leagues": { 
-		"NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders"],
-		"NA Tournaments": ["TToC", "RCL", "CLTP", "Pipberry"],
-		"EU Competitive": ["ECLTP"]
-	},
-	"Majors": {
-		"Radius": {
-			"ALL CAPS": "MAC",
+    "Leagues": { 
+        "NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders"],
+        "NA Tournaments": ["TToC", "RCL", "CLTP", "Pipberry"],
+        "EU Competitive": ["ECLTP"]
+    },
+    "Majors": {
+        "Radius": {
+            "ALL CAPS": "MAC",
             "Balls on Parade": "MBOP",
             "CreoKoalas": "MCRK",
             "Mickey Mouse Poperation": "MMMP",
             "Soviet Ballers": "MSVB",
             "The United Pingdom": "MGBR"
-		},
-		"Pi": {
-			"Holy Rolers": "MHR"
-		},
-		"Origin": {
-			"TC Jukes": "MTCJ"
-		},
+        },
+        "Pi": {
+            "Holy Rolers": "MHR"
+        },
+        "Origin": {
+            "TC Jukes": "MTCJ"
+        },
         "Sphere": {
             "Chennai Super Pings": "MCSP"
         },
-		"Centra": {
-			"Centra of Attention": "MCOA",
-			"Red Hot Chili Poppers": "RHCP",
-			"The Holy Seehawks": "MTHS"
-		}
-	},
-	"Minors": {
-		"Radius": {
-			"Balls on Parade": "NBOP",
+        "Centra": {
+            "Centra of Attention": "MCOA",
+            "Red Hot Chili Poppers": "RHCP",
+            "The Holy Seehawks": "MTHS"
+        }
+    },
+    "Minors": {
+        "Radius": {
+            "Balls on Parade": "NBOP",
             "Ballshevik Revolution": "NBSR",
             "Blue Hot Chili Poppers": "BHCP",
             "Boostnia and Herzegovina": "NBIH",
             "CreoDudes": "NCRD",
             "Minnie Mouse Poperation": "NMMP",
             "SMALL CAPS": "NSC"
-		},
-		"Pi": {
-			"Holy Rollers": "NHR"
-		},
-		"Origin": {
-			"Pings XI Punjab": "NPXI",
+        },
+        "Pi": {
+            "Holy Rollers": "NHR"
+        },
+        "Origin": {
+            "Pings XI Punjab": "NPXI",
             "TC Jukes": "NTCJ"
-		},
-		"Centra": {
-			"Respawnsiballs": "NRSP",
-			"Seattle Superspawnics": "NSSP"
-		}
-	},
-	"NLTP-A": {
-		"Radius": {
-			"Doggy's Tile": "ADST",
+        },
+        "Centra": {
+            "Respawnsiballs": "NRSP",
+            "Seattle Superspawnics": "NSSP"
+        }
+    },
+    "NLTP-A": {
+        "Radius": {
+            "Doggy's Tile": "ADST",
             "Flairbnb": "AFLB",
             "POGGERS": "APOG",
             "Return of the Jedi": "ARTJ",
             "The Probots": "APRO"
-		},
-		"Pi": {
-			"Pi-Curious": "APIC"
-		},
-		"Origin": {
-			"Ballsagna": "ABOY",
-			"Over the Pants Handoffs": "AOPH",
+        },
+        "Pi": {
+            "Pi-Curious": "APIC"
+        },
+        "Origin": {
+            "Ballsagna": "ABOY",
+            "Over the Pants Handoffs": "AOPH",
             "Pequeños Pandas": "APQP",
-			"WCYDinos": "ADNO"
-		},
-		"Centra": {
-			"SLA": "ASLA",
-			"The Land Before Timers": "ALBT"
-		}
-	},
-	"NLTP-B": {
-		"Radius": {
-			"Doggy's Tile": "BDST",
+            "WCYDinos": "ADNO"
+        },
+        "Centra": {
+            "SLA": "ASLA",
+            "The Land Before Timers": "ALBT"
+        }
+    },
+    "NLTP-B": {
+        "Radius": {
+            "Doggy's Tile": "BDST",
             "Flairbnb": "BFLB",
             "POGGERS": "BPOG",
             "Return of the Jedi": "BRTJ",
             "The Probots": "BPRO"
-		},
-		"Pi": {
-			"Pi-Curious": "BPIC"
-		},
-		"Origin": {
-			"Ballsagna": "BBOY",
-			"Over the Pants Handoffs": "BOPH",
+        },
+        "Pi": {
+            "Pi-Curious": "BPIC"
+        },
+        "Origin": {
+            "Ballsagna": "BBOY",
+            "Over the Pants Handoffs": "BOPH",
             "Pequeños Pandas": "BPQP",
-			"WCYDinos": "BDNO"
-		},
-		"Centra": {
-			"SLA": "BSLA",
-			"The Land Before Timers": "BLBT"
-		}
-	},
-	"US Contenders": {
-		"Group A": {
-			"Team 3": "STM3",
-			"Yikes": "SYKS",
-			"Jukes and Cats Alumni": "SJCA",
-			"Pi-romaniacs": "SPIR",
-			"The Hard D Boys": "SHDB"
-		},
-		"Group B": {
-			"Bubble Balls": "SBUB",
-			"OGPHO": "SOPH",
-			"Sippin' on Jin and Jukes": "SSJJ",
-			"Ballchester United": "SBLC",
-			"TC Jukes": "STCJ"
-		},
-		"Group C": {
-			"Death Cap for Cutie": "SDCC",
-			"Why So Serious?": "SWSS",
-			"Gasping for Flair": "SGFF",
-			"The Powerup Girls": "SPUP",
-			"Los Balludos": "SLSB"
-		}
-	},
-	"ECLTP": {
-		"Teams": {
-			"Ballmere City": "CBMC",
+            "WCYDinos": "BDNO"
+        },
+        "Centra": {
+            "SLA": "BSLA",
+            "The Land Before Timers": "BLBT"
+        }
+    },
+    "US Contenders": {
+        "Group A": {
+            "Team 3": "STM3",
+            "Yikes": "SYKS",
+            "Jukes and Cats Alumni": "SJCA",
+            "Pi-romaniacs": "SPIR",
+            "The Hard D Boys": "SHDB"
+        },
+        "Group B": {
+            "Bubble Balls": "SBUB",
+            "OGPHO": "SOPH",
+            "Sippin' on Jin and Jukes": "SSJJ",
+            "Ballchester United": "SBLC",
+            "TC Jukes": "STCJ"
+        },
+        "Group C": {
+            "Death Cap for Cutie": "SDCC",
+            "Why So Serious?": "SWSS",
+            "Gasping for Flair": "SGFF",
+            "The Powerup Girls": "SPUP",
+            "Los Balludos": "SLSB"
+        }
+    },
+    "ECLTP": {
+        "Teams": {
+            "Ballmere City": "CBMC",
             "Big Chungus": "CBGC",
             "Dog Strangles": "CDOG",
             "Janusze": "CJNZ",
@@ -127,6 +127,6 @@
             "Limitless": "CLMT",
             "Rickrollers": "CRKR",
             "Stranger Tags": "CSRT"
-		}
-	}
+        }
+    }
 }

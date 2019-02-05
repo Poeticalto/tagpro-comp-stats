@@ -196,3 +196,9 @@ v0.35 (09/12/2018)- Removed direct group creation link, removed groupLeader func
 v0.36 (09/30/2018)- Refactored code to allow change between leader/spectator, increased timout time for group functions, added ability to save game data locally, fixed cap update spam bug, reimplement checkLeader function, added ability to show update notes in group, officially added privacy policy
 
 v0.37 (10/11/2018)- Restructured group leader checking, restructured checking if group matches comp state, added a notification which shows if abbreviations aren't set and group matches comp state, added option to enable/disable abbreviation checks, restructured cap updates/final stats submissions, restructured local export json, added a refresh check to allow script to run when user refreshes in game, league selector is now hidden if group is a pub group, general cleanup
+
+v0.3701 (12/20/2018)- Emergency update to fix group bug of death on new test servers
+
+v0.38 (unreleased)- Change structure of teams.json, add support for the tagpro test servers, fix public group launch bug, general cleanup
+
+v0.39 (2/5/2019)- Add check to change in game muted sounds to volume "0", add options to enable/disable sound checks, standardize start time of match by matching with Analytics collector, reduce tournament team abbrs to 16, remove ability to define tournament groups with #tg, delay display of update notes when script is updated, general cleanup

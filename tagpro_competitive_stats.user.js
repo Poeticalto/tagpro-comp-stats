@@ -10,11 +10,11 @@
 // @downloadURL    https://gist.github.com/Poeticalto/00de8353fce79cac9059b22f20242039/raw/TagPro_Competitive_Group_Maker.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.38
+// @version        0.39
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
-// If your abbreviations/jerseys are out of date, message /u/Poeticalto using the support link above so he can update them or make a pull request on the corresponding GitHub repo.
+// If your abbreviations/jerseys are out of date, message /u/Poeticalto using the support link above so he can update them or make a pull request on the corresponding GitHub repo (pull from the stable branch).
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Custom Options can be accessed through the following steps:                                           //
@@ -27,13 +27,14 @@
 // Enable/Disable Jersey Spin = Enables/Disables the spin of jerseys in spectator mode                   //
 // Enable/Disable Save Stats Locally = Allows the user to locally save game stats after leaving the game //
 // Enable/Disable Abbreviation Checks = Enables/Disables warnings for when team names are not set        //
+// Enable/Disable Sound Checks = Enables/Disables automatic reset of volume to 0 when sounds are muted   //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Log script in console
 console.log(GM_info.script.name + ' active (Version: ' + GM_info.script.version + ')');
 
 // Start Script (Group functions)
-if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g*-*[ 0-z]*$/)) { // This gets your unique ID to determine which team you are in the group
+if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*-*[ 0-z]*$/)) { // This gets your unique ID to determine which team you are in the group
     //This is separate from the main functions because the 'you' event may get sent before the rest of the script has loaded
     tagpro.ready(function() {
         tagpro.group.socket.on("you", function(p) {
@@ -52,18 +53,15 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
         }
     }
     // Group Functions, or the functions which run when user is on the group page
-    if (window.location.href.split(".com")[1].match(/^\/groups\/#[crt]g-*[ 0-z]*$/)) { // If #cg/#tg/#rg is passed through, creates new group with competitive settings
+    if (window.location.href.split(".com")[1].match(/^\/groups\/#[cr]g-*[ 0-z]*$/)) { // If #cg/#tg/#rg is passed through, creates new group with competitive settings
         if (window.location.href.split(new RegExp("-", "gi")).length == 3) {
             GM_setValue("setMap", window.location.href.split("-")[2]); // sets a global var to remember the map name passed through
-        }
-        if (window.location.href.indexOf("#tg") >= 0) { // If #tg is passed through, change abbr to the right tournament
-            setTournament(window.location.href.split("-")[1].split(".")[0]);
         }
         document.getElementsByTagName("input")[1].checked = false; // ensures private group
         GM_setValue("makepug", true); // makepug is the flag to automatically set competitive settings
         document.getElementById("create-group-btn").click(); // create group
     }
-    else if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g*-*[ 0-z]*$/) && Array.apply(null, document.getElementsByClassName("js-leader")).length > 0) { // the fancy stuff for the first condition allows for a map to be passed in
+    else if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*-*[ 0-z]*$/) && Array.apply(null, document.getElementsByClassName("js-leader")).length > 0) { // the fancy stuff for the first condition allows for a map to be passed in
         leaderReady(); // runs function to set up leader stuff
         groupReady(true); // runs function to grab group info
     }
@@ -78,35 +76,26 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
                 if (!document.getElementById("autoscoreLeague")) { // if leader stuff wasn't activated by something else, start leader functions
                     changeLeader(true);
                 }
+                window.clearInterval(redundantLeadCheck); // clear interval since you're done checking
+            }
+            else if (redundantCount > 20) { // clear interval after ten seconds
                 window.clearInterval(redundantLeadCheck);
             }
-            else if (redundantCount > 20) {
-                window.clearInterval(redundantLeadCheck);
-            }
-            else {
+            else { // increment up if it hasn't been ten seconds yet
                 redundantCount++;
             }
         }, 500);
     }
-    else if (GM_getValue("compCheck", 0) >= 1 && window.location.href.split(".com")[1].indexOf("/games/find") > -1) {
-        // this condition avoids triggering game mode on the test server
-        console.log("Good luck in your game "+GM_getValue("backscorePlayer", "Some%20Ball")+"!");
-    }
     // Game functions, or functions which run when user is in game
-    else if (!window.tagpro && GM_getValue("compCheck", 0) >= 1 && (window.location.href.split(".com")[1].indexOf("/game") > -1 || window.location.port >= 8000)) { //comp game is detected when the tagpro object does not exist and port is game eligible (i.e. greater than 8000)
+    else if (!window.tagpro && GM_getValue("compCheck", 0) >= 1 && tagproConfig && tagproConfig.gameSocket) { //comp game is detected when the tagpro object does not exist and gameSocket exists in the tagproConfig object
         // Because the tagpro object is not defined, this already defines a comp eligible game, so there's no need for redundant checks
-        var groupServer = window.location.href.split("-")[1].split(".")[0];
+        var gameLink = tagproConfig.gameSocket;
+        var groupServer = gameLink.split("-")[1].split(".")[0];
+        var groupPort = gameLink.split(":")[1];
         var userTeam = GM_getValue("userTeam", "none");
-        var groupPort = "";
-        if (window.location.port == "") {
-            groupPort = "undefined";
-        }
-        else {
-            groupPort = window.location.port;
-        }
         var m = new Date();
         var startTime = (Math.floor(m.getTime() / 1000) + m.getTimezoneOffset() * 60);
-        console.log("Comp game detected on port " + groupPort + ", player mode activated with team " + userTeam);
+        console.log("Comp game detected on " + groupServer + ":" + groupPort + ", player mode activated with team " + userTeam);
         var backscoreRedCaps = 0; //backscore is taken directly from scoreboard, so it can be trusted
         var backscoreBlueCaps = 0;
         var updateRedCaps = 0; //auto is guessed from sound events, so it can't be trusted completely [used for cap updates]
@@ -117,24 +106,20 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
         var teamNum = []; // teamNum represents the team of each player: Red = 1 and Blue = 2
         var sendCheck = GM_getValue("tpcsConfirmation", false);
         var localCheck = GM_getValue("backLocalStorage", false);
+        var soundCheck = GM_getValue("tpcsSoundCheck", true);
         var playerCompCheck = GM_getValue("compCheck", 0);
         var playerLate = GM_getValue("tpcsLateFlag", false);
-        document.getElementById("cheering").addEventListener("play", goodCap, false); //Note: play event does not activate if sounds are muted
-        document.getElementById("sigh").addEventListener("play", badCap, false); // However, play event does activate is volume is set to 0 (but no mute)
-        // Todo: write function to set volume to 0 to allow sound events
-        if (GM_getValue("tpcsStartTime",0) > 0) { // If the start time was previously saved (i.e. player refreshed), call back
-            startTime = GM_getValue("tpcsStartTime");
-            updateRedCaps = GM_getValue("tpcsRefreshRed", 0);
-            updateBlueCaps = GM_getValue("tpcsRefreshBlue", 0);
-            playerLate = false;
-            firstSound = false;
-        }
-        // these functions are inside the block instead of outside the script since I don't know how else to do it
-        function goodCap() {
+        document.getElementById("cheering").addEventListener("play", function() { // cheering plays when the game starts or when your team caps
             if (firstSound === true) { //the first cheering sound starts the game, so don't increment cap counter
                 console.log("Start of comp game detected");
                 var x = new Date();
-                startTime = (Math.floor(x.getTime() / 1000) + x.getTimezoneOffset() * 60); // gets start time in UTC to avoid timezone confusion
+                if (tagproAnalyticsCollector && tagproAnalyticsCollector.data && tagproAnalyticsCollector.data.date) {
+                    // if the analytics collector is available, get the server defined start time
+                    startTime = tagproAnalyticsCollector.data.date+x.getTimezoneOffset() * 60;
+                }
+                else {
+                    startTime = (Math.floor(x.getTime() / 1000) + x.getTimezoneOffset() * 60); // gets start time in UTC to avoid timezone confusion
+                }
                 GM_setValue("tpcsStartTime", startTime);
             }
             else if (userTeam == 1) { // adds cap to Red team
@@ -151,8 +136,8 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
                     firstSound = false;
                 }
             }
-        }
-        function badCap() {
+        }, false); //Note: play event does not activate if sounds are muted
+        document.getElementById("sigh").addEventListener("play", function() { // sigh plays when other team caps
             if (userTeam == 1) { // adds cap to Blue team
                 updateBlueCaps += 1;
             }
@@ -164,6 +149,33 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
                     capUpdate(updateRedCaps, updateBlueCaps, startTime, groupPort, tableExport, teamNum, groupServer, false);
                 }
             }
+        }, false); // However, play event does activate is volume is set to 0 (but no mute)
+        var forceChangeEvent = new Event('change'); // define a change event to force volume update
+        if (soundCheck === true) { // if user has enabled sound checks
+            setTimeout(function(){ // check for 
+                if (document.getElementById("soundEffects").className == "off") {
+                    // manually reset volume if it is off
+                    document.getElementById("soundEffects").click();
+                    document.getElementById("volumeSlider").value = -50;
+                    document.getElementById("volumeSlider").dispatchEvent(forceChangeEvent);
+                }
+            }, 500);
+            document.getElementById("soundEffects").addEventListener("click", function() {
+                setTimeout(function(){
+                    if (document.getElementById("soundEffects").className == "off") {
+                        document.getElementById("soundEffects").click();
+                        document.getElementById("volumeSlider").value = -50;
+                        document.getElementById("volumeSlider").dispatchEvent(forceChangeEvent);
+                    }
+                }, 500);
+            }, false);
+        }
+        if (GM_getValue("tpcsStartTime",0) > 0) { // If the start time was previously saved (i.e. player refreshed), call back
+            startTime = GM_getValue("tpcsStartTime");
+            updateRedCaps = GM_getValue("tpcsRefreshRed", 0);
+            updateBlueCaps = GM_getValue("tpcsRefreshBlue", 0);
+            playerLate = false;
+            firstSound = false;
         }
         setInterval(function() {
             if (document.getElementById("options").style.display == "block") { // If the table is open, save stats
@@ -172,10 +184,6 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
                 teamNum = playerStats[1];
                 backscoreRedCaps = playerStats[2][0];
                 backscoreBlueCaps = playerStats[2][1];
-                if (window.location.port == "") {
-                    groupServer = playerStats[3];
-                    groupPort = playerStats[4];
-                }
             }
         }, 100); // update ten times per second
         document.onkeydown = function() { // This function sends a backup of the scoreboard in case partial stats are needed or stats need to be recreated.
@@ -210,13 +218,13 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
             }
         };
     }
-    else if (GM_getValue("compCheck", 0) >= 1 && (window.location.href.split(".com")[1].indexOf("/game") > -1 || window.location.port >= 8000))  { // Spectator mode
+    else if (GM_getValue("compCheck", 0) >= 1 && tagproConfig && tagproConfig.gameSocket)  { // Spectator mode
         // A check is needed here because there is no difference between this and a regular public game
         // Note: On the test server, the tagpro object is currently disabled as a spec, meaning that the script will trigger player mode for spectators
-        // thus, no additional checks are needed for the test server
         GM_setValue("tpcsLateFlag", false); // It doesn't matter if a spectator is late since they have access to the tagpro object
-        var specServer = window.location.href.split("-")[1].split(".")[0];
-        var specGroupPort = window.location.port;
+        var specLink = tagproConfig.gameSocket;
+        var specServer = gameLink.split("-")[1].split(".")[0];
+        var specGroupPort = gameLink.split(":")[1];
         var ma = new Date();
         var specStartTime = (Math.floor(ma.getTime() / 1000) + ma.getTimezoneOffset() * 60) + 20; // set redundant start time
         var specRedCaps = 0;
@@ -225,7 +233,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[crt]*g
         var firstUpdate = false;
         var specUpdateCheck = GM_getValue("tpcsConfirmation", false);
         var specLocalCheck = GM_getValue("backLocalStorage", false);
-        console.log("TagPro Competitive Stats is now running in Spectator mode on port " + window.location.port);
+        console.log("TagPro Competitive Stats is now running in Spectator mode on " + specServer + ":" + specGroupPort);
         tagpro.ready(function() {
             if ((GM_getValue("backRedJersey", false) || GM_getValue("backBlueJersey", false)) && GM_getValue("backJerseyFlag", true)) { // adapted version of Some Ball -1's jersey script
                 var red = GM_getValue("backRedJersey"); // grab jersey data from the group
@@ -455,14 +463,6 @@ function getSpecStats(finalId) {
 }
 
 function getStats() {
-    var gameLink = "";
-    var gameServer = "";
-    var gamePort = "";
-    if (window.location.port == "") {
-        gameLink = document.getElementById("options").children[0].innerText;
-        gameServer = gameLink.split("-")[1].split(".")[0];
-        gamePort = gameLink.split(".com:")[1];
-    }
     var statPlayers = document.getElementsByTagName("table").stats.rows.length;
     var tableExport = [];
     var scoreboardCaps = [0, 0];
@@ -488,7 +488,7 @@ function getStats() {
         }
         tableExport.push(playerPush);
     }
-    return [tableExport, teamNum, scoreboardCaps, gameServer, gamePort];
+    return [tableExport, teamNum, scoreboardCaps];
 }
 
 function groupEscape(group, checkVersion) {
@@ -567,13 +567,15 @@ function groupReady(isLeader) { // grab necessary info from the group
                 }
             }
         });
+        setTimeout(function(){
         var checkVersion = GM_getValue("tpcsCurrentVer",0);
-        if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
-            checkVersion = GM_info.script.version;
-            GM_setValue("tpcsCurrentVer",checkVersion);
-            var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Change structure of teams.json to be more readable.\n2. Add support for using the tagpro test servers\n3. Fix public group launch bug\n4. General cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
-            GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
-        }
+            if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
+                checkVersion = GM_info.script.version;
+                GM_setValue("tpcsCurrentVer",checkVersion);
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Change structure of teams.json to be more readable\n2. Add support for using the tagpro test servers\n3. Fix public group launch bug\n4. Add check to change in game muted sounds to volume '0'\n5. Add options to enable/disable sound checks\n6. Standardize start time of match by matching with Analytics collector\n7. Reduce tournament team abbrs to 16 (rip)\n8. Remove ability to define tournament groups with #tg (more rip)\n9. Delay display of update notes when script is updated\n10. General cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
+                GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
+            }
+        },1000);
         socket.on("play", function() { // play event
             groupEscape(group, checkVersion); // groupEscape grabs the necessary data from the group page
             GM_setValue("tpcsLateFlag", false);
@@ -589,9 +591,6 @@ function groupReady(isLeader) { // grab necessary info from the group
 
 function leaderReady() {
     console.log("Group leader detected, setting up group");
-    if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/#tg*-*[0-z]*$/)) { // set up tournament abbreviations if #tg is passed through
-        setTournament(window.location.href.split("-")[1].split(".")[0]);
-    }
     if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/#tg-*[ 0-z]*$/) || GM_getValue("setMap", "none") != "none") { // set up map if passed through
         var mapName = "";
         var mapList = document.getElementsByClassName("form-control js-socket-setting")[0];
@@ -684,7 +683,7 @@ function leaderReady() {
     abbrRequest.onload = function() {
         GM_setValue("autoscoreAbr", abbrRequest.response);
         var array = abbrRequest.response.Leagues;
-        array["TagPro Competitive Stats Settings"] = [GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]"];
+        array["TagPro Competitive Stats Settings"] = [GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]", GM_getValue("tpcsSoundCheck", true) ? "Disable Sound Checks [Currently Enabled]" : "Enable Sound Checks [Currently Disabled]"];
         var noneOption = document.createElement("option");
         noneOption.value = "None";
         noneOption.text = "None";
@@ -785,7 +784,14 @@ function openSettings(setting) {
         GM_setValue("backAbbrCheck", true);
         newSetting = "Disable Abbreviation Checks [Currently Enabled]";
     }
-
+    else if (setting == "Disable Sound Checks [Currently Enabled]") {
+        GM_setValue("tpcsSoundCheck", false);
+        newSetting = "Enable Sound Checks [Currently Disabled]";
+    }
+    else if (setting == "Enable Sound Checks [Currently Disabled]") {
+        GM_setValue("tpcsSoundCheck", true);
+        newSetting = "Disable Sound Checks [Currently Enabled]";
+    }
     var updateSettingsArray = document.getElementById("autoscoreLeague").getElementsByTagName("option");
     for (var i = updateSettingsArray.length - 1; i >= 0; i--)  { // loop backwards in the league selector array to update setting text
         if (updateSettingsArray[i].value == setting)  {
@@ -802,22 +808,6 @@ function pad(t, e) {
     var i = (e = e.toString()) + t,
         o = e.length > t.length ? e.length : t.length;
     return i.substr(i.length - o);
-}
-
-function setTournament(tournamentServer) { // change abbreviations to match the default tournament of the server
-    switch (tournamentServer) {
-        case "radius":
-            GM_setValue("autoscoreImport", "RCL");
-            break;
-        case "sphere":
-            GM_setValue("autoscoreImport", "TToC");
-            break;
-        case "centra":
-            GM_setValue("autoscoreImport", "Pipberry");
-            break;
-        default:
-            break;
-    }
 }
 
 function sortByScore(playerArr) { // bubble sort id array based on the score
@@ -858,7 +848,7 @@ function submitStats(backscoreRedCaps, backscoreBlueCaps, tableExport, teamNum, 
         GM_setValue("tpcsLastHref",0);
         GM_setValue("tpcsStartTime",0);
     }
-    else if (endTime - startTime > GM_getValue("groupTime", 0) * 60)  { //This is the Time success condition, when stats are submitted after the game has ended
+    else if ((endTime - startTime) > (GM_getValue("groupTime", 0) * 60))  { //This is the Time success condition, when stats are submitted after the game has ended
         submitRequest.open("POST", backscoreLink + "&entry.2031694514=" + "X" + "&submit=Submit");
         console.log("Game detected as complete [Time], stats submitted");
         GM_setValue("compCheck", 0);
@@ -913,7 +903,7 @@ function timeFromSeconds(t, e) {
 
 function updateTeamAbr() { // This function fills in the team abbreviations on the group page
     var abrJson = GM_getValue("autoscoreAbr");
-    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]"];
+    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]","Disable Sound Checks [Currently Enabled]", "Enable Sound Checks [Currently Disabled]"];
     if (settingsList.indexOf(document.getElementById("autoscoreLeague").value) >= 0) {
         openSettings(document.getElementById("autoscoreLeague").value);
         document.getElementById("autoscoreLeague").value = GM_getValue("autoscoreImport", "none");
@@ -954,9 +944,9 @@ function updateTeamAbr() { // This function fills in the team abbreviations on t
         document.getElementById("blueTeamAbr").style.display = "block";
     }
     switch (document.getElementById("autoscoreLeague").value) {
-        // teams is the list which is shown on the group page
-        // teamsLabels is the list of labels to help differentiate teams (usually server or conference)
-        // teamsRaw is the list of abbreviations to put into the group
+            // teams is the list which is shown on the group page
+            // teamsLabels is the list of labels to help differentiate teams (usually server or conference)
+            // teamsRaw is the list of abbreviations to put into the group
         case "TToC": // tournaments follow the same procedure so flow one case because I'm lazy
         case "RCL":
         case "CLTP":
@@ -975,7 +965,7 @@ function updateTeamAbr() { // This function fills in the team abbreviations on t
                 tourneyModifier = "Y";
             }
             teams = {"Teams":{}};
-            for (var t = 1; t <= 24; t++) {
+            for (var t = 1; t <= 16; t++) {
                 var addTeam = "";
                 if (t < 10) {
                     addTeam = tourneyModifier + "0" + t;
