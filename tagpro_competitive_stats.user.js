@@ -10,7 +10,7 @@
 // @downloadURL    https://gist.github.com/Poeticalto/00de8353fce79cac9059b22f20242039/raw/TagPro_Competitive_Group_Maker.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.3901
+// @version        0.3902
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -223,8 +223,8 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
         // Note: On the test server, the tagpro object is currently disabled as a spec, meaning that the script will trigger player mode for spectators
         GM_setValue("tpcsLateFlag", false); // It doesn't matter if a spectator is late since they have access to the tagpro object
         var specLink = tagproConfig.gameSocket;
-        var specServer = gameLink.split("-")[1].split(".")[0];
-        var specGroupPort = gameLink.split(":")[1];
+        var specServer = specLink.split("-")[1].split(".")[0];
+        var specGroupPort = specLink.split(":")[1];
         var ma = new Date();
         var specStartTime = (Math.floor(ma.getTime() / 1000) + ma.getTimezoneOffset() * 60) + 20; // set redundant start time
         var specRedCaps = 0;
@@ -572,7 +572,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Change structure of teams.json to be more readable\n2. Add support for using the tagpro test servers\n3. Fix public group launch bug\n4. Add check to change in game muted sounds to volume '0'\n5. Add options to enable/disable sound checks\n6. Standardize start time of match by matching with Analytics collector\n7. Reduce tournament team abbrs to 16 (rip)\n8. Remove ability to define tournament groups with #tg (more rip)\n9. Delay display of update notes when script is updated\n10. General cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Spectator mode hotfix\n10. General cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
