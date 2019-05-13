@@ -1,7 +1,7 @@
 {
     "Leagues": { 
         "NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders"],
-        "NA Tournaments": ["TToC", "DWT", "TBT"]
+        "NA Tournaments": ["TToC"]
     },
     "Majors": {
         "San Francisco": {
