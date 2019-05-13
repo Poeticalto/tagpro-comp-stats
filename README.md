@@ -202,3 +202,5 @@ v0.3701 (12/20/2018)- Emergency update to fix group bug of death on new test ser
 v0.38 (unreleased)- Change structure of teams.json, add support for the tagpro test servers, fix public group launch bug, general cleanup
 
 v0.39 (2/5/2019)- Add check to change in game muted sounds to volume "0", add options to enable/disable sound checks, standardize start time of match by matching with Analytics collector, reduce tournament team abbrs to 16, remove ability to define tournament groups with #tg, delay display of update notes when script is updated, general cleanup
+
+v0.40 (5/13/2019)- Update include clause to match updated TagPro URL, change Update/Download URL to point to GitHub Repo, update Tournament Abbreviations, change url of teams.json to point to proper location, general cleanup
