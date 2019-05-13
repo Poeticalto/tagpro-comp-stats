@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.40
+// @version        0.4000
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
