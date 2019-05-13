@@ -4,13 +4,13 @@
 // @namespace      https://poeticalto.github.io/
 // @website        https://github.com/poeticalto/tagpro-comp-stats
 // @supportURL     https://www.reddit.com/message/compose/?to=Poeticalto
-// @include        http://tagpro-*.koalabeast.com*
+// @include        *://*.koalabeast.com*
 // @description    Sets up an Autoscore/Backscore compatible no-script group and sends cap updates/stats while in game
-// @updateURL      https://gist.github.com/Poeticalto/00de8353fce79cac9059b22f20242039/raw/TagPro_Competitive_Group_Maker.user.js
-// @downloadURL    https://gist.github.com/Poeticalto/00de8353fce79cac9059b22f20242039/raw/TagPro_Competitive_Group_Maker.user.js
+// @updateURL      https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
+// @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.3902
+// @version        0.40
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -572,7 +572,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Spectator mode hotfix\n2. General cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Update include clause to match updated TagPro URL.\n2. Change Update/Download URL to point to GitHub Repo.\n3. Update Tournament Abbreviations.\n4. change url of teams.json to point to proper location.\n5. General Cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -677,7 +677,7 @@ function leaderReady() {
     }
     selectList.title = "Click here to set a league for team abbreviations or change custom settings!";
     var abbrRequest = new XMLHttpRequest();
-    abbrRequest.open("GET", "https://raw.githubusercontent.com/Poeticalto/tagpro-comp-stats/master/teamsv2.json"); // This json contains the abbreviations to use in group
+    abbrRequest.open("GET", "https://raw.githubusercontent.com/Poeticalto/tagpro-comp-stats/stable/teams.json"); // This json contains the abbreviations to use in group
     abbrRequest.responseType = "json";
     abbrRequest.send();
     abbrRequest.onload = function() {
@@ -720,7 +720,7 @@ function leaderReady() {
         if (alertCheck == 13)  { // all checks passed, so enter abbr check
             var checkTime = new Date();
             var checkProcess = (Math.floor(checkTime.getTime() / 1000) + checkTime.getTimezoneOffset() * 60); // get the current time
-            var oldId = GM_getValue("launchGroupId","nones"); // last group ID
+            var oldId = GM_getValue("launchGroupId","none"); // last group ID
             var currentId = GM_getValue("groupId", "none"); // current group ID
             var oldTime = GM_getValue("checkTime",0); // last time when notification was shown
             var teamNameCheck = true; // default value, should pass
@@ -948,25 +948,21 @@ function updateTeamAbr() { // This function fills in the team abbreviations on t
             // teamsLabels is the list of labels to help differentiate teams (usually server or conference)
             // teamsRaw is the list of abbreviations to put into the group
         case "TToC": // tournaments follow the same procedure so flow one case because I'm lazy
-        case "RCL":
-        case "CLTP":
-        case "Pipberry":
+        case "DWT":
+        case "TBT":
             var tourneyModifier;
             if (document.getElementById("autoscoreLeague").value == "TToC") {
                 tourneyModifier = "T";
             }
-            else if (document.getElementById("autoscoreLeague").value == "RCL") {
-                tourneyModifier = "R";
+            else if (document.getElementById("autoscoreLeague").value == "DWT") {
+                tourneyModifier = "D";
             }
-            else if (document.getElementById("autoscoreLeague").value == "CLTP") {
-                tourneyModifier = "C";
-            }
-            else if (document.getElementById("autoscoreLeague").value == "Pipberry") {
-                tourneyModifier = "Y";
+            else if (document.getElementById("autoscoreLeague").value == "TBT") {
+                tourneyModifier = "B";
             }
             teams = {"Teams":{}};
-            for (var t = 1; t <= 16; t++) {
-                var addTeam = "";
+            for (let t = 1; t <= 16; t++) {
+                let addTeam = "";
                 if (t < 10) {
                     addTeam = tourneyModifier + "0" + t;
                 }
