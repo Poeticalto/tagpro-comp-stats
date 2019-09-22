@@ -1,46 +1,82 @@
 {
     "Leagues": { 
-        "NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B", "US Contenders"],
+        "NA Competitive": ["Majors","Minors"],
         "NA Tournaments": ["TToC", "DWT", "TBT"]
+    },
+    "NFTL-A": {
+        "Dallas": {
+            "877-CAPSNOW": "T877",
+            "Sphere Itself": "TSPI",
+            "Tila Tequila's Juke Squad": "TTJS"
+        },
+        "Chicago": {
+            "Cosmic Cowboys": "TCMC",
+            "Returns of the Jedi": "TRTJ",
+            "Sex Gang": "TSXG",
+            "Spike": "TSPK",
+            "The Tagtime Theatre": "TTTT"
+        },
+        "Toronto": {
+            "The Neutralizers": "TTNT",
+            "WAOTergate": "TWAT"
+        }
+    },
+    "NFTL-B": {
+        "Dallas": {
+            "877-CAPSNOW": "U877",
+            "Sphere Itself": "USPI"
+        },
+        "Chicago": {
+            "Cosmic Cowboys": "UCMC",
+            "Returns of the Jedi": "URTJ",
+            "Sex Gang": "USXG",
+            "Spike": "USPK",
+            "The Tagtime Theatre": "UTTT",
+            "Tila Tequila's Juke Squad": "UTJS"
+        },
+        "Toronto": {
+            "The Neutralizers": "UTNT",
+            "WAOTergate": "UWAT"
+        }
     },
     "Majors": {
         "San Francisco": {
-            "The Holy Seehawks": "MTHS"
+            "The Elite Four": "MTEF",
+            "WCYDinos": "MDNO"
         },
         "Dallas": {
-            "Holdin' Gate Warriors": "MHGW",
-            "Origin Ducks in 3D": "MOD",
-            "Red Hot Chili Poppers": "RHCP",
-            "Toronto Captors": "MTOC"
+            "Rektiles": "MRKT"
         },
         "Chicago": {
             "ALL CAPS": "MAC",
-            "Mickey Mouse Poperation": "MMMP",
-            "Over the Pants Handoffs": "MOPH"
+            "Capital City Bombers": "MCCB",
+            "Land Before Timers": "MLBT",
+            "Village Idiots": "MVIL"
         },
-        "Toronto": {
-            "Hard Block Life": "MHBL",
-            "Roller Bears": "MRLB"
+        "New York": {
+            "Coup d'Ecap": "MCDC",
+            "Fire Breathing Rubber Duckies": "MFBD",
+            "Stranger Pings": "Stranger Pings"
         }
     },
     "Minors": {
-        "Dallas": {
-            "Blue Hot Chili Poppers": "BHCP",
-            "Clout 9": "NCT9",
-            "Respawnsiballs": "NRSP",
-            "The Balltastics": "NTBT"
+        "San Francisco": {
+            "Fire Breathing Dancing Monkeys": "NFBM",
+            "Land Before Minors": "NLBM"
+        },
+        "Seattle": {
+            "Gotta Cap Em' All": "NGCA"
         },
         "Chicago": {
-            "21 Juke Street": "N21J",
-            "CapHazards": "NCPH",
-            "Orbital Tilt": "NOBT",
-            "TC Jukes": "NTCJ"
+            "Doolittle Raiders": "NDOR",
+            "Rektiles": "NRKT",
+            "Village Idiots": "NVIL",
+            "WCYDinos": "NDNO"
         },
         "Toronto": {
-            "Contain Your Enthusiasm": "NCYE",
-            "Gateful Dead": "NGFD",
-            "Pardon My Gate": "NPMG",
-            "Run The Jukes": "NRTJ"
+            "Preventure Time": "NPRE",
+            "SMALL CAPS": "NSC",
+            "the dndside down": "NDND"
         }
     },
     "NLTP-A": {
