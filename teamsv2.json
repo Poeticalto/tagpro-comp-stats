@@ -1,6 +1,6 @@
 {
     "Leagues": { 
-        "NA Competitive": ["NFTL-A", "NFTL-B"],
+        "NA Competitive": ["Majors","Minors"],
         "NA Tournaments": ["TToC"]
     },
     "NFTL-A": {
@@ -41,42 +41,42 @@
     },
     "Majors": {
         "San Francisco": {
-            "The Holy Seehawks": "MTHS"
+            "The Elite Four": "MTEF",
+            "WCYDinos": "MDNO"
         },
         "Dallas": {
-            "Holdin' Gate Warriors": "MHGW",
-            "Origin Ducks in 3D": "MOD",
-            "Red Hot Chili Poppers": "RHCP",
-            "Toronto Captors": "MTOC"
+            "Rektiles": "MRKT"
         },
         "Chicago": {
             "ALL CAPS": "MAC",
-            "Mickey Mouse Poperation": "MMMP",
-            "Over the Pants Handoffs": "MOPH"
+            "Capital City Bombers": "MCCB",
+            "Land Before Timers": "MLBT",
+            "Village Idiots": "MVIL"
         },
-        "Toronto": {
-            "Hard Block Life": "MHBL",
-            "Roller Bears": "MRLB"
+        "New York": {
+            "Coup d'Ecap": "MCDC",
+            "Fire Breathing Rubber Duckies": "MFBD",
+            "Stranger Pings": "Stranger Pings"
         }
     },
     "Minors": {
-        "Dallas": {
-            "Blue Hot Chili Poppers": "BHCP",
-            "Clout 9": "NCT9",
-            "Respawnsiballs": "NRSP",
-            "The Balltastics": "NTBT"
+        "San Francisco": {
+            "Fire Breathing Dancing Monkeys": "NFBM",
+            "Land Before Minors": "NLBM"
+        },
+        "Seattle": {
+            "Gotta Cap Em' All": "NGCA"
         },
         "Chicago": {
-            "21 Juke Street": "N21J",
-            "CapHazards": "NCPH",
-            "Orbital Tilt": "NOBT",
-            "TC Jukes": "NTCJ"
+            "Doolittle Raiders": "NDOR",
+            "Rektiles": "NRKT",
+            "Village Idiots": "NVIL",
+            "WCYDinos": "NDNO"
         },
         "Toronto": {
-            "Contain Your Enthusiasm": "NCYE",
-            "Gateful Dead": "NGFD",
-            "Pardon My Gate": "NPMG",
-            "Run The Jukes": "NRTJ"
+            "Preventure Time": "NPRE",
+            "SMALL CAPS": "NSC",
+            "the dndside down": "NDND"
         }
     },
     "NLTP-A": {
