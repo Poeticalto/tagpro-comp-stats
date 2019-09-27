@@ -80,63 +80,43 @@
         }
     },
     "NLTP-A": {
-        "San Francisco": {
-            "Ball My Life": "ABML",
-            "The Cap 22s": "AC22"
+        "Seattle": {
+            "The Holdin' Eagles": "ATHE"
         },
         "Los Angeles": {
             "Land Before Timers": "ALBT"
         },
         "Chicago": {
-            "Leonardo NiceCaprio": "ALEO",
-            "Over the Pants Handoffs": "AOPH",
-            "Red Hot Chili Poppers": "ARCP",
-            "WCYDinos": "ADNO"
+            "Ping Gizzard & the Lizard Wizard": "AGIZ",
+            "The Pigeon Boys": "ATPB"
         },
         "Toronto": {
-            "Hogwarts School": "AWIZ",
-            "reCAPTCHA": "AREC",
-            "The Blokes": "ABLK",
-            "The Flying Burrito Balls": "AFBB",
-            "The Manipulation Station": "ANIP",
-            "Whitecaps": "AWHC"
-        },
-        "New York": {
-            "Under the Pants Rubgrabs": "AUPR",
-            "FlairBnB": "AFLB"
-        },
-        "Atlanta": {
-            "Blockhole Surfers": "ABHS"
+            "Chapo Cap House": "ACCH",
+            "New Pingland Revolutions": "AREV",
+            "Over the Pants Handoffs": "AOPH",
+            "Primordial Clam Chowder": "APCC",
+            "The Pinga Coladas": "ATPC",
+            "WCYDinos": "ADNO"
         }
     },
     "NLTP-B": {
-        "San Francisco": {
-            "Ball My Life": "BBML",
-            "The Cap 22s": "BC22"
+        "Seattle": {
+            "The Holdin' Eagles": "BTHE"
         },
         "Los Angeles": {
             "Land Before Timers": "BLBT"
         },
         "Chicago": {
-            "Leonardo NiceCaprio": "BLEO",
-            "Over the Pants Handoffs": "BOPH",
-            "Red Hot Chili Poppers": "BRCP",
-            "WCYDinos": "BDNO"
+            "Ping Gizzard & the Lizard Wizard": "BGIZ",
+            "The Pigeon Boys": "BTPB"
         },
         "Toronto": {
-            "Hogwarts School": "BWIZ",
-            "reCAPTCHA": "BREC",
-            "The Blokes": "BBLK",
-            "The Flying Burrito Balls": "BFBB",
-            "The Manipulation Station": "BNIP",
-            "Whitecaps": "BWHC"
-        },
-        "New York": {
-            "Under the Pants Rubgrabs": "BUPR",
-            "FlairBnB": "BFLB"
-        },
-        "Atlanta": {
-            "Blockhole Surfers": "BBHS"
+            "Chapo Cap House": "BCCH",
+            "New Pingland Revolutions": "BREV",
+            "Over the Pants Handoffs": "BOPH",
+            "Primordial Clam Chowder": "BPCC",
+            "The Pinga Coladas": "BTPC",
+            "WCYDinos": "BDNO"
         }
     },
     "US Contenders": {
