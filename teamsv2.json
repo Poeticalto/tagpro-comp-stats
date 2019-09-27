@@ -1,43 +1,7 @@
 {
     "Leagues": { 
-        "NA Competitive": ["Majors","Minors"],
+        "NA Competitive": ["Majors","Minors", "NLTP-A", "NLTP-B"],
         "NA Tournaments": ["TToC"]
-    },
-    "NFTL-A": {
-        "Dallas": {
-            "877-CAPSNOW": "T877",
-            "Sphere Itself": "TSPI",
-            "Tila Tequila's Juke Squad": "TTJS"
-        },
-        "Chicago": {
-            "Cosmic Cowboys": "TCMC",
-            "Returns of the Jedi": "TRTJ",
-            "Sex Gang": "TSXG",
-            "Spike": "TSPK",
-            "The Tagtime Theatre": "TTTT"
-        },
-        "Toronto": {
-            "The Neutralizers": "TTNT",
-            "WAOTergate": "TWAT"
-        }
-    },
-    "NFTL-B": {
-        "Dallas": {
-            "877-CAPSNOW": "U877",
-            "Sphere Itself": "USPI"
-        },
-        "Chicago": {
-            "Cosmic Cowboys": "UCMC",
-            "Returns of the Jedi": "URTJ",
-            "Sex Gang": "USXG",
-            "Spike": "USPK",
-            "The Tagtime Theatre": "UTTT",
-            "Tila Tequila's Juke Squad": "UTJS"
-        },
-        "Toronto": {
-            "The Neutralizers": "UTNT",
-            "WAOTergate": "UWAT"
-        }
     },
     "Majors": {
         "San Francisco": {
@@ -117,29 +81,6 @@
             "Primordial Clam Chowder": "BPCC",
             "The Pinga Coladas": "BTPC",
             "WCYDinos": "BDNO"
-        }
-    },
-    "US Contenders": {
-        "Group A": {
-            "Team 3": "STM3",
-            "Yikes": "SYKS",
-            "Jukes and Cats Alumni": "SJCA",
-            "Pi-romaniacs": "SPIR",
-            "The Hard D Boys": "SHDB"
-        },
-        "Group B": {
-            "Bubble Balls": "SBUB",
-            "OGPHO": "SOPH",
-            "Sippin' on Jin and Jukes": "SSJJ",
-            "Ballchester United": "SBLC",
-            "TC Jukes": "STCJ"
-        },
-        "Group C": {
-            "Death Cap for Cutie": "SDCC",
-            "Why So Serious?": "SWSS",
-            "Gasping for Flair": "SGFF",
-            "The Powerup Girls": "SPUP",
-            "Los Balludos": "SLSB"
         }
     }
 }
