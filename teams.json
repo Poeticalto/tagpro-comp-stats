@@ -1,46 +1,70 @@
 {
     "Leagues": { 
-        "NA Competitive": ["Majors","Minors", "NLTP-A", "NLTP-B"],
-        "NA Tournaments": ["TToC"]
+        "NA Competitive": ["Majors","Minors"],
+        "NA Tournaments": ["TPA"]
     },
-    "Majors": {
-        "San Francisco": {
-            "The Elite Four": "MTEF",
-            "WCYDinos": "MDNO"
-        },
+    "NFTL-A": {
         "Dallas": {
-            "Rektiles": "MRKT"
+            "877-CAPSNOW": "T877",
+            "Sphere Itself": "TSPI",
+            "Tila Tequila's Juke Squad": "TTJS"
         },
         "Chicago": {
-            "ALL CAPS": "MAC",
-            "Capital City Bombers": "MCCB",
-            "Land Before Timers": "MLBT",
-            "Village Idiots": "MVIL"
+            "Cosmic Cowboys": "TCMC",
+            "Returns of the Jedi": "TRTJ",
+            "Sex Gang": "TSXG",
+            "Spike": "TSPK",
+            "The Tagtime Theatre": "TTTT"
         },
-        "New York": {
+        "Toronto": {
+            "The Neutralizers": "TTNT",
+            "WAOTergate": "TWAT"
+        }
+    },
+    "NFTL-B": {
+        "Dallas": {
+            "877-CAPSNOW": "U877",
+            "Sphere Itself": "USPI"
+        },
+        "Chicago": {
+            "Cosmic Cowboys": "UCMC",
+            "Returns of the Jedi": "URTJ",
+            "Sex Gang": "USXG",
+            "Spike": "USPK",
+            "The Tagtime Theatre": "UTTT",
+            "Tila Tequila's Juke Squad": "UTJS"
+        },
+        "Toronto": {
+            "The Neutralizers": "UTNT",
+            "WAOTergate": "UWAT"
+        }
+    },
+    "Majors": {
+        "Dallas": {
+            "ALL CAPS": "MAC",
+            "Centra of Attention": "MCOA",
             "Coup d'Ecap": "MCDC",
             "Fire Breathing Rubber Duckies": "MFBD",
-            "Stranger Pings": "MSRP"
+            "Ghostboosters": "MGB",
+            "He Hate Re": "MHHR",
+            "Holdin' Gate Warriors": "MHGW",
+            "Holy Rollers": "MHR",
+            "Red Hot Chili Poppers": "RHCP",
+            "The Holy Seehawks": "MTHS"
         }
     },
     "Minors": {
-        "San Francisco": {
-            "Fire Breathing Dancing Monkeys": "NFBM",
-            "Land Before Minors": "NLBM"
-        },
-        "Seattle": {
-            "Gotta Cap Em' All": "NGCA"
-        },
-        "Chicago": {
-            "Doolittle Raiders": "NDOR",
-            "Rektiles": "NRKT",
-            "Village Idiots": "NVIL",
-            "WCYDinos": "NDNO"
-        },
-        "Toronto": {
-            "Preventure Time": "NPRE",
-            "SMALL CAPS": "NSC",
-            "the dndside down": "NDND"
+        "Dallas": {
+            "D-Spikeaball Me": "NDSM",
+            "Jardim of Eden": "NJDE",
+            "Land Before Timers": "NLBT",
+            "Pardon My Gate": "NPMG",
+            "PussyCap Balls": "NPCB",
+            "qakboosters": "NQAK",
+            "TC Jukes": "NTCJ",
+            "Teenage Mutant Ninja Turtlers": "NTMT",
+            "The Ball Boys": "NTBB",
+            "Young Hotties": "NYHT"
         }
     },
     "NLTP-A": {

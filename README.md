@@ -66,7 +66,7 @@ If you are viewing a no-script game in spectator mode, you will also be able to 
 
 ---
 
-### **teams.json and jerseys.json**
+### **teams.json, jerseys.json, and customMaps.json**
 
 This script imports two jsons in order to provide accurate information for players.
 
@@ -124,6 +124,26 @@ For example:
     "MPIC": ["oEGw0Ql", "xIyWZ5w", 1, 1, 1, 1],
     "MCRK": ["pxYvTOi", "akr6qGR", 1, 1, 1, 1]
     // continue teams after
+}
+```
+
+customMaps.json allows for the creation of custom map lists mapped with their respective map ID on [unfortunate maps.](https://unfortunate-maps.jukejuice.com) It is formatted as a JSON object where each map list is a property. Map lists are sorted alphabetically and will show up at the bottom of the map selector in the groups page. The map list itself is an array of JSON objects, where each index represents one map and its id. The order of the maps in the array matters, as the script will display maps in the same order on the group page.
+
+For example:
+
+```javascript
+{
+    "MMTC": [ // name for the map list
+        {
+            "name":"Transilio 2020", // name of map
+            "mapID":67148 // id of map on unfortunate maps
+        },
+        {
+            "name":"Haste",
+            "mapID":67237
+        }
+        // continue maps after
+    ] // add more lists as needed
 }
 ```
 
@@ -204,3 +224,5 @@ v0.38 (unreleased)- Change structure of teams.json, add support for the tagpro t
 v0.39 (2/5/2019)- Add check to change in game muted sounds to volume "0", add options to enable/disable sound checks, standardize start time of match by matching with Analytics collector, reduce tournament team abbrs to 16, remove ability to define tournament groups with #tg, delay display of update notes when script is updated, general cleanup
 
 v0.40 (5/13/2019)- Update include clause to match updated TagPro URL, change Update/Download URL to point to GitHub Repo, update Tournament Abbreviations, change url of teams.json to point to proper location, general cleanup
+
+v0.41 (1/11/2020)- Overtime is off by default in comp groups, added ability to set custom map lists, updated comp check functions to support overtime, added new custom option to support H2 overtime

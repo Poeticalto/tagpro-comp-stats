@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4000
+// @version        0.4100
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -23,6 +23,7 @@
 // 3. At the bottom of the list, click on the option you want to toggle.                                 //
 // The option's current state will be shown in brackets. (like [currently enabled])                      //
 // Current Options:                                                                                      //
+// Enable/Disable H2 Overtime = Enables/Disables overtime settings for overtime in two half games        //
 // Enable/Disable Jerseys = Enables/Disables team jerseys in spectator mode                              //
 // Enable/Disable Jersey Spin = Enables/Disables the spin of jerseys in spectator mode                   //
 // Enable/Disable Save Stats Locally = Allows the user to locally save game stats after leaving the game //
@@ -32,7 +33,6 @@
 
 // Log script in console
 console.log(GM_info.script.name + ' active (Version: ' + GM_info.script.version + ')');
-
 // Start Script (Group functions)
 if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*-*[ 0-z]*$/)) { // This gets your unique ID to determine which team you are in the group
     //This is separate from the main functions because the 'you' event may get sent before the rest of the script has loaded
@@ -152,7 +152,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
         }, false); // However, play event does activate is volume is set to 0 (but no mute)
         var forceChangeEvent = new Event('change'); // define a change event to force volume update
         if (soundCheck === true) { // if user has enabled sound checks
-            setTimeout(function(){ // check for 
+            setTimeout(function(){ // check and update volume
                 if (document.getElementById("soundEffects").className == "off") {
                     // manually reset volume if it is off
                     document.getElementById("soundEffects").click();
@@ -218,7 +218,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
             }
         };
     }
-    else if (GM_getValue("compCheck", 0) >= 1 && tagproConfig && tagproConfig.gameSocket)  { // Spectator mode
+    else if (GM_getValue("compCheck", 0) >= 1 && tagproConfig && tagproConfig.gameSocket) { // Spectator mode
         // A check is needed here because there is no difference between this and a regular public game
         // Note: On the test server, the tagpro object is currently disabled as a spec, meaning that the script will trigger player mode for spectators
         GM_setValue("tpcsLateFlag", false); // It doesn't matter if a spectator is late since they have access to the tagpro object
@@ -400,13 +400,16 @@ function compCheck() {
     var checkSum = 0;
     var checkToggles = 0;
     var extraSettingsNum = document.getElementsByClassName("js-setting-value").length;
-    var defaultSettings = ["Random", "10 Minutes", "No Capture Limit", "100% (Default)", "100% (Default)", "100% (Default)", "3 Seconds (Default)", "10 Seconds (Default)", "30 Seconds (Default)", "1 Minute (Default)", "Enabled", "Disabled (Default)", "Disable", "Disable"]
+    var defaultSettings = ["Random", "10 Minutes", "No Overtime", "No Capture Limit", "No Mercy Rule", "100% (Default)", "100% (Default)", "100% (Default)", "3 Seconds (Default)", "10 Seconds (Default)", "30 Seconds (Default)", "1 Minute (Default)", "Enabled", "Disabled (Default)", "Disable", "Disable", "Disabled", "Disabled"];
     for (var i = 1; i < extraSettingsNum; i++) {
+        if (i == 2) {
+            continue;
+        }
         var extraSetting = document.getElementsByClassName("js-setting-value")[i].innerText;
         if (extraSetting == defaultSettings[i]) {
             checkSum++;
         }
-        if (extraSetting == defaultSettings[i] && i >= 12) {
+        if (extraSetting == defaultSettings[i] && i >= 14) {
             checkToggles++;
         }
     }
@@ -521,8 +524,8 @@ function groupEscape(group, checkVersion) {
         }
 
         var escapeCheck = compCheck();
-        if (escapeCheck[0] >= 12 && escapeCheck[1] == 2) {
-            if (escapeCheck[0] == 13 || document.getElementsByClassName("js-setting-value")[1].innerText != "10 Minutes") { // If minutes is the only thing which doesn't match, then it's still a legal comp game
+        if (escapeCheck[0] >= 15 && escapeCheck[1] == 4) {
+            if (escapeCheck[0] == 16 || document.getElementsByClassName("js-setting-value")[1].innerText != "10 Minutes") { // If minutes is the only thing which doesn't match, then it's still a legal comp game
                 GM_setValue("compCheck", 2); // state 2 matches a standard comp game
                 getJerseys();
             }
@@ -531,7 +534,7 @@ function groupEscape(group, checkVersion) {
                 getJerseys();
             }
         }
-        else if (escapeCheck[1] == 2) {
+        else if (escapeCheck[1] == 4) {
             GM_setValue("compCheck", 1);
             getJerseys();
         }
@@ -553,6 +556,26 @@ function groupReady(isLeader) { // grab necessary info from the group
         jerseyRequest.onload = function() {
             GM_setValue("jerseyLinks", jerseyRequest.response);
         }
+        var mapRequest = new XMLHttpRequest();
+        mapRequest.open("GET", "https://raw.githubusercontent.com/Poeticalto/tagpro-comp-stats/stable/customMaps.json"); // This json contains a master list of custom maps
+        mapRequest.responseType = "json";
+        mapRequest.send();
+        mapRequest.onload = function() {
+            mapRequest.response;
+            let mapTestKeys = Object.keys(mapRequest.response);
+            for (let i = 0; i < mapTestKeys.length; i++) {
+                let currentLabel = document.createElement("optgroup");
+                currentLabel.label = mapTestKeys[i];
+                let currentList = mapRequest.response[mapTestKeys[i]];
+                for (let j = 0; j < mapRequest.response[mapTestKeys[i]].length; j++) {
+                    let currentOption = document.createElement("option");
+                    currentOption.text = currentList[j].name;
+                    currentOption.value = "id/"+currentList[j].mapID.toString();
+                    currentLabel.appendChild(currentOption);
+                }
+                document.getElementsByName("map")[1].appendChild(currentLabel);
+            }
+        }
         var group = tagpro.group = Object.assign(tagpro.group, {
             self: GM_getValue("tpUserId", undefined),
             players: {}
@@ -572,7 +595,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Update include clause to match updated TagPro URL.\n2. Change Update/Download URL to point to GitHub Repo.\n3. Update Tournament Abbreviations.\n4. change url of teams.json to point to proper location.\n5. General Cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu."
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Overtime is off by default in comp groups\n2. Added ability to set custom map lists\n3. Updated comp check functions to support overtime\n4. Added new custom option to support H2 overtime\n5. General Cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -654,6 +677,7 @@ function leaderReady() {
             console.log("Private group detected, setting up comp settings");
             if (document.getElementsByName("competitiveSettings")[0].checked === false) {
                 document.getElementsByName("competitiveSettings")[0].click(); // Turns on competitive settings
+                tagpro.group.socket.emit("setting", { name: "overtime", value: "false"});
             }
             if (!!document.getElementById("autoscoreLeague") && !!document.getElementById("redTeamAbr")) { // unhide leader elements if the user already had them loaded
                 document.getElementById("autoscoreLeague").style.display = "block";
@@ -683,7 +707,7 @@ function leaderReady() {
     abbrRequest.onload = function() {
         GM_setValue("autoscoreAbr", abbrRequest.response);
         var array = abbrRequest.response.Leagues;
-        array["TagPro Competitive Stats Settings"] = [GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]", GM_getValue("tpcsSoundCheck", true) ? "Disable Sound Checks [Currently Enabled]" : "Enable Sound Checks [Currently Disabled]"];
+        array["TagPro Competitive Stats Settings"] = [GM_getValue("backMLTPOvertime", false) ? "Disable H2 Overtime [Currently Enabled]" : "Enable H2 Overtime [Currently Disabled]", GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]", GM_getValue("tpcsSoundCheck", true) ? "Disable Sound Checks [Currently Enabled]" : "Enable Sound Checks [Currently Disabled]"];
         var noneOption = document.createElement("option");
         noneOption.value = "None";
         noneOption.text = "None";
@@ -717,7 +741,7 @@ function leaderReady() {
     }
     document.getElementById("launch-private-btn").onmouseover = function () {
         var alertCheck = compCheck()[0];
-        if (alertCheck == 13)  { // all checks passed, so enter abbr check
+        if (alertCheck == 13) { // all checks passed, so enter abbr check
             var checkTime = new Date();
             var checkProcess = (Math.floor(checkTime.getTime() / 1000) + checkTime.getTimezoneOffset() * 60); // get the current time
             var oldId = GM_getValue("launchGroupId","none"); // last group ID
@@ -727,7 +751,7 @@ function leaderReady() {
             if (document.getElementsByTagName("input").redTeamName.value == "Red" || document.getElementsByTagName("input").blueTeamName.value == "Blue") { // change the check to fail if either of the team names are default (Red for red team, Blue for blue team)
                 teamNameCheck = false;
             }
-            if (((checkProcess - oldTime) >= (15*60) || currentId != oldId) && teamNameCheck === false && GM_getValue("backAbbrCheck", true) === true)  { // If it has been 15 minutes or the group has changed since the last check, and abbr check failed, and user allowed notifs, then execute
+            if (((checkProcess - oldTime) >= (15*60) || currentId != oldId) && teamNameCheck === false && GM_getValue("backAbbrCheck", true) === true) { // If it has been 15 minutes or the group has changed since the last check, and abbr check failed, and user allowed notifs, then execute
                 GM_setValue("checkTime", checkProcess);
                 GM_setValue("launchGroupId", currentId);
                 window.alert("A competitive game was detected without proper abbreviations!\nMake sure your abbreviations are set before launching!");
@@ -752,7 +776,51 @@ function leaderReady() {
 
 function openSettings(setting) {
     var newSetting = "";
-    if (setting == "Disable Jerseys [Currently Enabled]") {
+    if (setting == "Disable H2 Overtime [Currently Enabled]") {
+        GM_setValue("backMLTPOvertime", false);
+        newSetting = "Enable H2 Overtime [Currently Disabled]";
+        tagpro.group.socket.emit("setting", { name: "overtime", value: "false"});
+        tagpro.group.socket.emit("setting", { name: "redTeamScore", value: "0"});
+        tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: "0"});
+    }
+    else if (setting == "Enable H2 Overtime [Currently Disabled]") {
+        GM_setValue("backMLTPOvertime", true);
+        newSetting = "Disable H2 Overtime [Currently Enabled]";
+        tagpro.group.socket.emit("setting", { name: "overtime", value: "true"});
+        let lastGameData = GM_getValue("tpcsLastGame",[{name:"Red",score:0},{name:"Blue",score:0}]);
+        let curRedName = document.getElementsByName("redTeamName")[0].value;
+        let curBlueName = document.getElementsByName("blueTeamName")[0].value;
+        if (document.getElementsByName("redTeamName")[0].value == lastGameData[0].name) {
+            document.getElementById("swapTeams-btn").click();
+            if (curRedName == lastGameData[0].name) {
+                tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: lastGameData[0].score.toString()});
+            }
+            else if (curRedName == lastGameData[1].name) {
+                tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: lastGameData[1].score.toString()});
+            }
+            if (curBlueName == lastGameData[0].name) {
+                tagpro.group.socket.emit("setting", { name: "redTeamScore", value: lastGameData[0].score.toString()});
+            }
+            else if (curBlueName == lastGameData[1].name) {
+                tagpro.group.socket.emit("setting", { name: "redTeamScore", value: lastGameData[1].score.toString()});
+            }
+        }
+        else {
+            if (curRedName == lastGameData[0].name) {
+                tagpro.group.socket.emit("setting", { name: "redTeamScore", value: lastGameData[0].score.toString()});
+            }
+            else if (curRedName == lastGameData[1].name) {
+                tagpro.group.socket.emit("setting", { name: "redTeamScore", value: lastGameData[1].score.toString()});
+            }
+            if (curBlueName == lastGameData[0].name) {
+                tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: lastGameData[0].score.toString()});
+            }
+            else if (curBlueName == lastGameData[1].name) {
+                tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: lastGameData[1].score.toString()});
+            }
+        }
+    }
+    else if (setting == "Disable Jerseys [Currently Enabled]") {
         GM_setValue("backJerseyFlag", false);
         newSetting = "Enable Jerseys [Currently Disabled]";
     }
@@ -768,15 +836,15 @@ function openSettings(setting) {
         GM_setValue("backJerseySpin", true);
         newSetting = "Disable Jersey Spin [Currently Enabled]";
     }
-    else if (setting == "Enable Saving Local Stats [Currently Disabled]")  {
+    else if (setting == "Enable Saving Local Stats [Currently Disabled]") {
         GM_setValue("backLocalStorage", true);
         newSetting = "Disable Saving Local Stats [Currently Enabled]";
     }
-    else if (setting == "Disable Saving Local Stats [Currently Enabled]")  {
+    else if (setting == "Disable Saving Local Stats [Currently Enabled]") {
         GM_setValue("backLocalStorage", false);
         newSetting = "Enable Saving Local Stats [Currently Disabled]";
     }
-    else if (setting == "Disable Abbreviation Checks [Currently Enabled]")  {
+    else if (setting == "Disable Abbreviation Checks [Currently Enabled]") {
         GM_setValue("backAbbrCheck", false);
         newSetting = "Enable Abbreviation Checks [Currently Disabled]";
     }
@@ -793,8 +861,8 @@ function openSettings(setting) {
         newSetting = "Disable Sound Checks [Currently Enabled]";
     }
     var updateSettingsArray = document.getElementById("autoscoreLeague").getElementsByTagName("option");
-    for (var i = updateSettingsArray.length - 1; i >= 0; i--)  { // loop backwards in the league selector array to update setting text
-        if (updateSettingsArray[i].value == setting)  {
+    for (var i = updateSettingsArray.length - 1; i >= 0; i--) { // loop backwards in the league selector array to update setting text
+        if (updateSettingsArray[i].value == setting) {
             updateSettingsArray[i].value = newSetting;
             updateSettingsArray[i].text = newSetting;
             break;
@@ -841,22 +909,22 @@ function submitStats(backscoreRedCaps, backscoreBlueCaps, tableExport, teamNum, 
     if (groupCapLimit == 0) {
         groupCapLimit = -1;
     }
-    if (endCheck === true)  { // This occurs when a spectator reaches the end of the game and the 'end' event is activated
-        submitRequest.open("POST", backscoreLink + "&entry.2031694514=" + "X" + "&submit=Submit");
+    if (endCheck === true) { // This occurs when a spectator reaches the end of the game and the 'end' event is activated
+        submitRequest.open("POST", backscoreLink + "&entry.2031694514=X&submit=Submit");
         console.log("Game detected as complete [End event], stats submitted");
         GM_setValue("compCheck", 0);
         GM_setValue("tpcsLastHref",0);
         GM_setValue("tpcsStartTime",0);
     }
-    else if ((endTime - startTime) > (GM_getValue("groupTime", 0) * 60))  { //This is the Time success condition, when stats are submitted after the game has ended
-        submitRequest.open("POST", backscoreLink + "&entry.2031694514=" + "X" + "&submit=Submit");
+    else if ((endTime - startTime) > (GM_getValue("groupTime", 0) * 60)) { //This is the Time success condition, when stats are submitted after the game has ended
+        submitRequest.open("POST", backscoreLink + "&entry.2031694514=X&submit=Submit");
         console.log("Game detected as complete [Time], stats submitted");
         GM_setValue("compCheck", 0);
         GM_setValue("tpcsLastHref",0);
         GM_setValue("tpcsStartTime",0);
     }
-    else if (backscoreRedCaps == groupCapLimit || backscoreBlueCaps == groupCapLimit)  { //This is the Cap success condition, when stats are submitted when cap limit is reached
-        submitRequest.open("POST", backscoreLink + "&entry.2031694514=" + "X" + "&submit=Submit");
+    else if (backscoreRedCaps == groupCapLimit || backscoreBlueCaps == groupCapLimit) { //This is the Cap success condition, when stats are submitted when cap limit is reached
+        submitRequest.open("POST", backscoreLink + "&entry.2031694514=X&submit=Submit");
         console.log("Game detected as complete [Cap Limit], stats submitted");
         GM_setValue("compCheck", 0);
         GM_setValue("tpcsLastHref",0);
@@ -868,6 +936,7 @@ function submitStats(backscoreRedCaps, backscoreBlueCaps, tableExport, teamNum, 
         console.log("Game detected as incomplete, stats submitted");
         GM_setValue("tpcsLastHref", window.location.href);
     }
+    GM_setValue("tpcsLastGame",[{name:GM_getValue("backscoreRedAbr", "Red"),score:backscoreRedCaps},{name:GM_getValue("backscoreBlueAbr", "Blue"),score:backscoreBlueCaps}]);
     if (localCheck <= 1) { // send stats to server
         submitRequest.send();
     }
@@ -903,7 +972,7 @@ function timeFromSeconds(t, e) {
 
 function updateTeamAbr() { // This function fills in the team abbreviations on the group page
     var abrJson = GM_getValue("autoscoreAbr");
-    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]","Disable Sound Checks [Currently Enabled]", "Enable Sound Checks [Currently Disabled]"];
+    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]","Disable Sound Checks [Currently Enabled]", "Enable Sound Checks [Currently Disabled]", "Disable H2 Overtime [Currently Enabled]", "Enable H2 Overtime [Currently Disabled]"];
     if (settingsList.indexOf(document.getElementById("autoscoreLeague").value) >= 0) {
         openSettings(document.getElementById("autoscoreLeague").value);
         document.getElementById("autoscoreLeague").value = GM_getValue("autoscoreImport", "none");
@@ -948,14 +1017,14 @@ function updateTeamAbr() { // This function fills in the team abbreviations on t
             // teamsLabels is the list of labels to help differentiate teams (usually server or conference)
             // teamsRaw is the list of abbreviations to put into the group
         case "TToC": // tournaments follow the same procedure so flow one case because I'm lazy
-        case "DWT":
+        case "TPA":
         case "TBT":
             var tourneyModifier;
             if (document.getElementById("autoscoreLeague").value == "TToC") {
                 tourneyModifier = "T";
             }
-            else if (document.getElementById("autoscoreLeague").value == "DWT") {
-                tourneyModifier = "D";
+            else if (document.getElementById("autoscoreLeague").value == "TPA") {
+                tourneyModifier = "A";
             }
             else if (document.getElementById("autoscoreLeague").value == "TBT") {
                 tourneyModifier = "B";
