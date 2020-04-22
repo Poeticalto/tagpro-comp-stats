@@ -40,25 +40,27 @@
 			"The Land Before Timers": "ALBT"
 		},
 		"Los Angeles": {
-			"SLATFATC": "ASLA"
+			"Dark Side of the Ball": "ADSB",
+                        "Ultralight Team": "AUTL"
 		},
 		"Chicago": {
-			"Boston Pops": "ABOP",
-			"Imagine Laggins": "ALAG"
-		},
-		"Atlanta": {
-			"New Pingland Revolutions": "AREV"
+			"Big Poppa & the Dinos": "ABPD",
+                        "Over the Pants Handoffs": "AOPH",
+                        "The Holdin' Eagles": "ATHE"
 		},
 		"Toronto": {
-			"Jack in the Blocks": "AJIB",
-			"Over the Pants Handoffs": "AOPH",
-			"Pi-Curious": "APIC",
-			"St. James InfirWormy": "ASJW",
-			"The Probots": "APRO"
+			"??": "AQUE",
+                        "G-Squad": "AGSQ",
+                        "Jack in the Blocks": "AJIB",
+                        "TC Jukes": "ATCJ",
+                        "The Manipulation Station": "ANIP",
+                        "The Mighty Ducks": "AMTD"
 		},
 		"New York": {
-			"The Gateful Dead": "AGFD",
-			"WCYDinos": "ADNO"
+			"A Blockwork Orange": "AABO",
+                        "Big Cap Rescue": "ABCR",
+                        "Capybaras": "ACPB",
+                        "Trailer Park Balls": "ATPB"
 		}
 	},
 	"NLTP-B": {
@@ -66,25 +68,27 @@
 			"The Land Before Timers": "BLBT"
 		},
 		"Los Angeles": {
-			"SLATFATC": "BSLA"
+			"Dark Side of the Ball": "BDSB",
+                        "Ultralight Team": "BUTL"
 		},
 		"Chicago": {
-			"Boston Pops": "BBOP",
-			"Imagine Laggins": "BLAG"
-		},
-		"Atlanta": {
-			"New Pingland Revolutions": "BREV"
+			"Big Poppa & the Dinos": "BBPD",
+                        "Over the Pants Handoffs": "BOPH",
+                        "The Holdin' Eagles": "BTHE"
 		},
 		"Toronto": {
-			"Jack in the Blocks": "BJIB",
-			"Over the Pants Handoffs": "BOPH",
-			"Pi-Curious": "BPIC",
-			"St. James InfirWormy": "BSJW",
-			"The Probots": "BPRO"
+			"??": "BQUE",
+                        "G-Squad": "BGSQ",
+                        "Jack in the Blocks": "BJIB",
+                        "TC Jukes": "BTCJ",
+                        "The Manipulation Station": "BNIP",
+                        "The Mighty Ducks": "BMTD"
 		},
 		"New York": {
-			"The Gateful Dead": "BGFD",
-			"WCYDinos": "BDNO"
+			"A Blockwork Orange": "BABO",
+                        "Big Cap Rescue": "BBCR",
+                        "Capybaras": "BCPB",
+                        "Trailer Park Balls": "BTPB"
 		}
 	}
 }
