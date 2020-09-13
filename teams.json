@@ -8,7 +8,7 @@
 			"877-CAPSNOW": "M877",
 			"A Blockwork Orange": "MABO",
 			"Holdin' Gate Warriors": "MHGW",
-			"Origin Ducks": "MHGW",
+			"Origin Ducks": "MOD",
 			"Rektiles": "MRKT",
 			"Sphere Itself": "MSPI",
 			"Spherious Business": "MSPB",
@@ -17,18 +17,18 @@
 	},
 	"Minors": {
 		"Dallas": {
-            "All Eyez On Re": "NAER",
-            "Blue Hot Chili Poppers": "BHCP",
-            "CapHazard": "NCPH",
-            "Clocks n Blocks": "NCNB",
-            "Death by Saunuku": "NDBS",
-            "Land Before Timers": "NLBT",
-            "Pi-Curious": "NPIC",
-            "qakboosters": "NQAK",
-            "Seasons 1-6 House Tagaryen": "NHTG",
-            "TC Jukes": "NTCJ",
-            "ThunderCaps": "NTC",
-            "Young Hotties": "NYHT"
+			"Ball Guys": "NGUY",
+			"Bottle Otters": "NBOT",
+			"Bubble Balls": "NBUB",
+			"Chennai Muper Pings": "NCMP",
+			"Itsy Bitsy Spikers": "NIBS",
+			"Mumble Cappers": "NMBC",
+			"OutPast": "NOTP",
+			"Pi-Curious": "NPIC",
+			"Roamin' Swipes": "NRMS",
+			"Snow Angles": "NSNA",
+			"WCYDinos": "NDNO",
+			"Young Hotties": "NYHT"
 		}
 	},
 	"NLTP-A": {
