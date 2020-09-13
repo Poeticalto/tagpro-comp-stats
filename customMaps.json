@@ -1,1 +1,27 @@
-{"NALTP Maps": [{"name":"Copper","mapID":69164},{"name":"Haste","mapID":67910},{"name":"MERALD","mapID":66941},{"name":"Transilio 2020","mapID":67148},{"name":"Willow","mapID":69528}],"MMTC Maps": [{"name":"Callisto","mapID":67240},{"name":"Marauder","mapID":64255},{"name":"Treppenwitz","mapID":67205},{"name":"Worm","mapID":67214}]}
+{
+	"NALTP S22/19 Maps": [{
+			"name": "Cedar",
+			"mapID": 74315
+		},
+		{
+			"name": "Dash",
+			"mapID": 75166
+		},
+		{
+			"name": "Haste",
+			"mapID": 67910
+		}, {
+			"name": "MERALD",
+			"mapID": 66941
+		}, {
+			"name": "Sugar Hill",
+			"mapID": 69481
+		}, {
+			"name": "Transilio 2020",
+			"mapID": 67148
+		}, {
+			"name": "Willow",
+			"mapID": 72981
+		}
+	]
+}
