@@ -33,58 +33,48 @@
 	},
 	"NLTP-A": {
 		"San Francisco": {
+			"Dark Side of the Ball": "ADSB",
 			"The Land Before Timers": "ALBT"
 		},
-		"Los Angeles": {
-			"Dark Side of the Ball": "ADSB",
-                        "Ultralight Team": "AULT"
-		},
 		"Chicago": {
-			"Big Poppa & the Dinos": "ABPD",
-                        "Over the Pants Handoffs": "AOPH",
-                        "The Holdin' Eagles": "ATHE"
+			"Bohemian Cap City": "ABOH",
+			"Spherical on Ice": "ASOI",
+			"The Team About Nothing": "ATAN"
+		},
+		"Atlanta": {
+			"Master Boaters": "AMB8"
 		},
 		"Toronto": {
-			"??": "AQUE",
-                        "G-Squad": "AGSQ",
-                        "Jack in the Blocks": "AJIB",
-                        "TC Jukes": "ATCJ",
-                        "The Manipulation Station": "ANIP",
-                        "The Mighty Ducks": "ATMD"
-		},
-		"New York": {
 			"A Blockwork Orange": "AABO",
-                        "Big Cap Rescue": "ABCR",
-                        "Capybaras": "ACPB",
-                        "Trailer Park Balls": "ATPB"
+			"Big Poppa Goes to Olive Jardim": "AOLD",
+			"Catalytic Cap Converters": "ACCC",
+			"Ball Guys": "AGUY",
+                        "Poost Office": "APOO",
+			"The Manipulation Station": "ANIP"
 		}
 	},
 	"NLTP-B": {
 		"San Francisco": {
+			"Dark Side of the Ball": "BDSB",
 			"The Land Before Timers": "BLBT"
 		},
-		"Los Angeles": {
-			"Dark Side of the Ball": "BDSB",
-                        "Ultralight Team": "BULT"
-		},
 		"Chicago": {
-			"Big Poppa & the Dinos": "BBPD",
-                        "Over the Pants Handoffs": "BOPH",
-                        "The Holdin' Eagles": "BTHE"
+			"Big Poppa Goes to Olive Jardim": "BOLD",
+			"Bohemian Cap City": "BBOH",
+			"Spherical on Ice": "BSOI",
+			"The Team About Nothing": "BTAN"
+		},
+		"Atlanta": {
+			"Master Boaters": "BMB8",
+                        "Poost Office": "BPOO"
 		},
 		"Toronto": {
-			"??": "BQUE",
-                        "G-Squad": "BGSQ",
-                        "Jack in the Blocks": "BJIB",
-                        "TC Jukes": "BTCJ",
-                        "The Manipulation Station": "BNIP",
-                        "The Mighty Ducks": "BTMD"
+			"A Blockwork Orange": "BABO",
+			"Ball Guys": "BGUY",
+			"The Manipulation Station": "BNIP"
 		},
 		"New York": {
-			"A Blockwork Orange": "BABO",
-                        "Big Cap Rescue": "BBCR",
-                        "Capybaras": "BCPB",
-                        "Trailer Park Balls": "BTPB"
+			"Catalytic Cap Converters": "BCCC"
 		}
 	}
 }
