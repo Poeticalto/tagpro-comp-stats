@@ -5,30 +5,26 @@
 	},
 	"Majors": {
 		"Dallas": {
-			"877-CAPSNOW": "M877",
-			"A Blockwork Orange": "MABO",
+			"G6": "MG6",
 			"Holdin' Gate Warriors": "MHGW",
-			"Origin Ducks": "MOD",
-			"Rektiles": "MRKT",
-			"Sphere Itself": "MSPI",
-			"Spherious Business": "MSPB",
-			"Spjork and the Seven Jorks": "MS7J"
+			"Mr. Poppa's Pinguins": "MMPP",
+			"Pi-Curious": "MPIC",
+			"Red Hot Chili Poppers": "RHCP",
+			"Snipe Hunt": "MSNP",
+			"The Holy Seehawks": "MTHS",
+			"The Miami Ballphins": "MMIA"
 		}
 	},
 	"Minors": {
 		"Dallas": {
-			"Ball Guys": "NGUY",
-			"Bottle Otters": "NBOT",
-			"Bubble Balls": "NBUB",
-			"Chennai Muper Pings": "NCMP",
-			"Itsy Bitsy Spikers": "NIBS",
-			"Mumble Cappers": "NMBC",
-			"OutPast": "NOTP",
+			"G6": "NG6",
+			"Holdin' Gate Warriors": "NHGW",
+			"Mr. Poppa's Pinguins": "NMPP",
 			"Pi-Curious": "NPIC",
-			"Roamin' Swipes": "NRMS",
-			"Snow Angles": "NSNA",
-			"WCYDinos": "NDNO",
-			"Young Hotties": "NYHT"
+			"Red Hot Chili Poppers": "RBHCP",
+			"Snipe Hunt": "NSNP",
+			"The Holy Seehawks": "NTHS",
+			"The Miami Ballphins": "NMIA"
 		}
 	},
 	"NLTP-A": {
