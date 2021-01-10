@@ -1,27 +1,11 @@
 {
-	"NALTP S22/19 Maps": [{
-			"name": "Cedar",
-			"mapID": 74315
-		},
-		{
-			"name": "Dash",
-			"mapID": 75166
-		},
-		{
-			"name": "Haste",
-			"mapID": 67910
-		}, {
-			"name": "MERALD",
-			"mapID": 66941
-		}, {
-			"name": "Sugar Hill",
-			"mapID": 69481
-		}, {
-			"name": "Transilio 2020",
-			"mapID": 67148
-		}, {
-			"name": "Willow",
-			"mapID": 72981
-		}
-	]
+  "NALTP S23/20 Maps": [
+    {"name": "Haste","mapID": 67910},
+    {"name": "MERALD","mapID": 66941},
+    {"name": "Pilot 3","mapID": 75032},
+    {"name": "Sugar Hill","mapID": 69481},
+    {"name": "Rush 2","mapID": 76615},
+    {"name": "Transilio 2020","mapID": 67148},
+    {"name": "Willow 2","mapID": 76616}
+  ]
 }
