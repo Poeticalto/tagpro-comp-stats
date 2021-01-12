@@ -5,82 +5,72 @@
 	},
 	"Majors": {
 		"Dallas": {
-			"ALL CAPS": "MAC",
-			"Centra of Attention": "MCOA",
-			"Coup d'Ecap": "MCDC",
-			"Fire Breathing Rubber Duckies": "MFBD",
-			"Ghostboosters": "MGB",
-			"He Hate Re": "MHHR",
+			"G6": "MG6",
 			"Holdin' Gate Warriors": "MHGW",
-			"Holy Rollers": "MHR",
+			"Mr. Poppa's Pinguins": "MMPP",
+			"Pi-Curious": "MPIC",
 			"Red Hot Chili Poppers": "RHCP",
-			"The Holy Seehawks": "MTHS"
+			"Snipe Hunt": "MSNI",
+			"The Holy Seehawks": "MTHS",
+			"The Miami Ballphins": "MMIA"
 		}
 	},
 	"Minors": {
 		"Dallas": {
-			"D-Spikeaball Me": "NDSM",
-			"Jardim of Eden": "NJDE",
-			"Land Before Timers": "NLBT",
-			"Pardon My Gate": "NPMG",
-			"PussyCap Balls": "NPCB",
-			"qakboosters": "NQAK",
-			"TC Jukes": "NTCJ",
-			"Teenage Mutant Ninja Turtlers": "NTMT",
-			"The Ball Boys": "NTBB",
-			"Young Hotties": "NYHT"
+			"G6": "NG6",
+			"Holdin' Gate Warriors": "NHGW",
+			"Mr. Poppa's Pinguins": "NMPP",
+			"Pi-Curious": "NPIC",
+			"Red Hot Chili Poppers": "BHCP",
+			"Snipe Hunt": "NSNI",
+			"The Holy Seehawks": "NTHS",
+			"The Miami Ballphins": "NMIA"
 		}
 	},
 	"NLTP-A": {
 		"San Francisco": {
+			"Dark Side of the Ball": "ADSB",
 			"The Land Before Timers": "ALBT"
 		},
-		"Los Angeles": {
-			"SLATFATC": "ASLA"
-		},
 		"Chicago": {
-			"Boston Pops": "ABOP",
-			"Imagine Laggins": "ALAG"
+			"Bohemian Cap City": "ABOH",
+			"Spherical on Ice": "ASOI",
+			"The Team About Nothing": "ATAN"
 		},
 		"Atlanta": {
-			"New Pingland Revolutions": "AREV"
+			"Master Boaters": "AMB8"
 		},
 		"Toronto": {
-			"Jack in the Blocks": "AJIB",
-			"Over the Pants Handoffs": "AOPH",
-			"Pi-Curious": "APIC",
-			"St. James InfirWormy": "ASJW",
-			"The Probots": "APRO"
-		},
-		"New York": {
-			"The Gateful Dead": "AGFD",
-			"WCYDinos": "ADNO"
+			"A Blockwork Orange": "AABO",
+			"Big Poppa Goes to Olive Jardim": "AOLD",
+			"Catalytic Cap Converters": "ACCC",
+			"Ball Guys": "AGUY",
+                        "Poost Office": "APOO",
+			"The Manipulation Station": "ANIP"
 		}
 	},
 	"NLTP-B": {
 		"San Francisco": {
+			"Dark Side of the Ball": "BDSB",
 			"The Land Before Timers": "BLBT"
 		},
-		"Los Angeles": {
-			"SLATFATC": "BSLA"
-		},
 		"Chicago": {
-			"Boston Pops": "BBOP",
-			"Imagine Laggins": "BLAG"
+			"Big Poppa Goes to Olive Jardim": "BOLD",
+			"Bohemian Cap City": "BBOH",
+			"Spherical on Ice": "BSOI",
+			"The Team About Nothing": "BTAN"
 		},
 		"Atlanta": {
-			"New Pingland Revolutions": "BREV"
+			"Master Boaters": "BMB8",
+                        "Poost Office": "BPOO"
 		},
 		"Toronto": {
-			"Jack in the Blocks": "BJIB",
-			"Over the Pants Handoffs": "BOPH",
-			"Pi-Curious": "BPIC",
-			"St. James InfirWormy": "BSJW",
-			"The Probots": "BPRO"
+			"A Blockwork Orange": "BABO",
+			"Ball Guys": "BGUY",
+			"The Manipulation Station": "BNIP"
 		},
 		"New York": {
-			"The Gateful Dead": "BGFD",
-			"WCYDinos": "BDNO"
+			"Catalytic Cap Converters": "BCCC"
 		}
 	}
 }

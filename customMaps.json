@@ -1,1 +1,11 @@
-{"MMTC Maps": [{"name":"Callisto","mapID":67240},{"name":"Haste","mapID":67237},{"name":"Haste (Updated)","mapID":67910},{"name":"Marauder","mapID":64255},{"name":"Transilio 2020","mapID":67148},{"name":"Treppenwitz","mapID":67205},{"name":"Worm","mapID":67214}]}
+{
+  "NALTP S23/20 Maps": [
+    {"name": "Haste","mapID": 67910},
+    {"name": "MERALD","mapID": 66941},
+    {"name": "Pilot 3","mapID": 75032},
+    {"name": "Sugar Hill","mapID": 69481},
+    {"name": "Rush 2","mapID": 76615},
+    {"name": "Transilio 2020","mapID": 67148},
+    {"name": "Willow 2","mapID": 76616}
+  ]
+}
