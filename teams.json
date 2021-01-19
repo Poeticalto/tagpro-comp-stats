@@ -29,48 +29,52 @@
 	},
 	"NLTP-A": {
 		"San Francisco": {
-			"Dark Side of the Ball": "ADSB",
+			"Do the Wire": "ADTW"
+		},
+		"Los Angeles": {
 			"The Land Before Timers": "ALBT"
 		},
-		"Chicago": {
-			"Bohemian Cap City": "ABOH",
-			"Spherical on Ice": "ASOI",
-			"The Team About Nothing": "ATAN"
+		"Central": {
+			"Green Eggs and Spam": "AGES",
+			"Legends of the Splittin' Temple": "ALST",
+			"The Manipulation Station": "ANIP"
 		},
 		"Atlanta": {
+			"Bust a Pup": "ABAP",
+			"Incrediballs": "AINC",
 			"Master Boaters": "AMB8"
 		},
 		"Toronto": {
-			"A Blockwork Orange": "AABO",
-			"Big Poppa Goes to Olive Jardim": "AOLD",
-			"Catalytic Cap Converters": "ACCC",
-			"Ball Guys": "AGUY",
-                        "Poost Office": "APOO",
-			"The Manipulation Station": "ANIP"
+			"Bohemian Cap City": "ABCC",
+			"Miami Ballphins": "AMIA",
+			"The Cyclists": "ACYC"
+		},
+		"New York": {
+			"Weed the People": "AWTP"
 		}
 	},
 	"NLTP-B": {
 		"San Francisco": {
-			"Dark Side of the Ball": "BDSB",
+			"Do the Wire": "BDTW"
+		},
+		"Los Angeles": {
 			"The Land Before Timers": "BLBT"
 		},
-		"Chicago": {
-			"Big Poppa Goes to Olive Jardim": "BOLD",
-			"Bohemian Cap City": "BBOH",
-			"Spherical on Ice": "BSOI",
-			"The Team About Nothing": "BTAN"
-		},
-		"Atlanta": {
-			"Master Boaters": "BMB8",
-                        "Poost Office": "BPOO"
-		},
-		"Toronto": {
-			"A Blockwork Orange": "BABO",
-			"Ball Guys": "BGUY",
+		"Central": {
+			"Bohemian Cap City": "BBCC",
+			"Bust a Pup": "BBAP",
+			"Legends of the Splittin' Temple": "BLST",
+			"Miami Ballphins": "BMIA",
 			"The Manipulation Station": "BNIP"
 		},
+		"Toronto": {
+			"The Cyclists": "BCYC",
+			"Master Boaters": "BMB8"
+		},
 		"New York": {
-			"Catalytic Cap Converters": "BCCC"
+			"Green Eggs and Spam": "BGES",
+			"Incrediballs": "BINC",
+			"Weed the People": "BWTP"
 		}
 	}
 }
