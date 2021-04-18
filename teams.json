@@ -5,26 +5,26 @@
 	},
 	"Majors": {
 		"Dallas": {
-			"G6": "MG6",
-			"Holdin' Gate Warriors": "MHGW",
-			"Mr. Poppa's Pinguins": "MMPP",
-			"Pi-Curious": "MPIC",
-			"Red Hot Chili Poppers": "RHCP",
+			"??": "MQUE",
+			"Holdin' Gate Warriors": "MHHGW",
+			"Los Angeles Angles": "MLAA",
+			"Marble Madness": "MMBM",
+			"Miami Ballphins": "MMIA",
+			"Pupkin Pi": "MPKP",
 			"Snipe Hunt": "MSNI",
-			"The Holy Seehawks": "MTHS",
-			"The Miami Ballphins": "MMIA"
+			"Someday Service Choir": "MSSC"
 		}
 	},
 	"Minors": {
 		"Dallas": {
-			"G6": "NG6",
-			"Holdin' Gate Warriors": "NHGW",
-			"Mr. Poppa's Pinguins": "NMPP",
-			"Pi-Curious": "NPIC",
-			"Red Hot Chili Poppers": "BHCP",
-			"Snipe Hunt": "NSNI",
-			"The Holy Seehawks": "NTHS",
-			"The Miami Ballphins": "NMIA"
+			"Insane Cap Possee": "NICP",
+			"Kansas City Mapache Chiefs": "NKCX",
+			"Lemon Merangle Pi": "NLMP",
+			"Miami Ballphins": "NMIA",
+			"Someday Service Choir": "NSSC",
+			"Two Balls One Pup": "N2BP",
+			"WCYDinos": "NDNO",
+			"Weed the People": "NWTP"
 		}
 	},
 	"NLTP-A": {
