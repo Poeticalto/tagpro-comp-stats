@@ -28,52 +28,56 @@
 		}
 	},
 	"NLTP-A": {
-		"San Francisco": {
-			"Do the Wire": "ADTW"
+		"Seattle": {
+			"Pingfield Isotopes": "AISO"
 		},
 		"Los Angeles": {
 			"The Land Before Timers": "ALBT"
 		},
 		"Central": {
-			"Green Eggs and Spam": "AGES",
 			"Legends of the Splittin' Temple": "ALST",
-			"The Manipulation Station": "ANIP"
+			"Miami Ballphin": "AMIA"
+		},
+		"Chicago": {
+			"Bank of Americaps": "ABOA",
+			"Manipulation Station": "ANIP"	
 		},
 		"Atlanta": {
-			"Bust a Pup": "ABAP",
-			"Incrediballs": "AINC",
-			"Master Boaters": "AMB8"
+			"The Krusty Grabs": "AKGB"
 		},
 		"Toronto": {
-			"Bohemian Cap City": "ABCC",
-			"Miami Ballphins": "AMIA",
-			"The Cyclists": "ACYC"
+			"??": "AQUE",
+			"Super Monkey Balls": "ASMB"
 		},
 		"New York": {
+			"Bohemian Cap City": "ABCC",
+			"The Handoff God": "AHOG",
 			"Weed the People": "AWTP"
 		}
 	},
 	"NLTP-B": {
 		"San Francisco": {
-			"Do the Wire": "BDTW"
+			"Pingfield Isotopes": "BISO"
 		},
 		"Los Angeles": {
 			"The Land Before Timers": "BLBT"
 		},
 		"Central": {
 			"Bohemian Cap City": "BBCC",
-			"Bust a Pup": "BBAP",
 			"Legends of the Splittin' Temple": "BLST",
-			"Miami Ballphins": "BMIA",
-			"The Manipulation Station": "BNIP"
+			"The Krusty Grabs": "BKGB"
+		},
+		"Chicago": {
+			"Manipulation Station": "BNIP"	
 		},
 		"Toronto": {
-			"The Cyclists": "BCYC",
-			"Master Boaters": "BMB8"
+			"Bank of Americaps": "BBOA",
+			"Miami Ballphin": "BMIA",
+			"Super Monkey Balls": "BSMB"
 		},
 		"New York": {
-			"Green Eggs and Spam": "BGES",
-			"Incrediballs": "BINC",
+			"??": "BQUE",
+			"The Handoff God": "BHOG",
 			"Weed the People": "BWTP"
 		}
 	}
