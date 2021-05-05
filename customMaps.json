@@ -1,11 +1,14 @@
 {
-  "NALTP S23/20 Maps": [
+  "NALTP S24/21 Maps": [
+    {"name": "Audacity 2","mapID": 76614},
     {"name": "Dash","mapID": 76597},
     {"name": "Haste","mapID": 67910},
     {"name": "MERALD","mapID": 66941},
-    {"name": "Pilot 3","mapID": 75032},
+    {"name": "Moon Base","mapID": 77617},
+    {"name": "Pine","mapID": 78563},
     {"name": "Sugar Hill","mapID": 69481},
     {"name": "Rush 2","mapID": 76615},
+    {"name": "Tetanic","mapID": 73515},
     {"name": "Transilio 2020","mapID": 67148},
     {"name": "Willow 2","mapID": 76616}
   ]
