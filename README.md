@@ -226,3 +226,5 @@ v0.39 (2/5/2019)- Add check to change in game muted sounds to volume "0", add op
 v0.40 (5/13/2019)- Update include clause to match updated TagPro URL, change Update/Download URL to point to GitHub Repo, update Tournament Abbreviations, change url of teams.json to point to proper location, general cleanup
 
 v0.41 (1/11/2020)- Overtime is off by default in comp groups, added ability to set custom map lists, updated comp check functions to support overtime, added new custom option to support H2 overtime
+
+v0.42 (5/4/2021)- Fix overtime defaults to be in line with dev changes from TPFG Update 6, update backscore to prepare for backend refresh

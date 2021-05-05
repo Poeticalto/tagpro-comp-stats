@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4100
+// @version        0.4200
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -367,7 +367,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
 function capUpdate(updateRedCaps, updateBlueCaps, startTime, groupPort, tableExport, teamNum, groupServer, specFlag) { // send cap update
     var y = new Date();
     var currentTime = (Math.floor(y.getTime() / 1000) + y.getTimezoneOffset() * 60); // gets start time in UTC
-    var backscoreUpdate = "https://docs.google.com/forms/d/e/1FAIpQLSe57NOVRdas-tzT4MZ8-XPSkNO3MyKCTrAOyFGXp4PtNQcdkQ/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + updateRedCaps + "&entry.1906941178=" + updateBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.1523561265=" + startTime + "&entry.1474408630=" + currentTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString();
+    var backscoreUpdate = "https://docs.google.com/forms/d/e/1FAIpQLScS1jIXjME3rtCxa6o5QdNSMFyuWqS7kCGiRLwWg-7LyCsYeA/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + updateRedCaps + "&entry.1906941178=" + updateBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.1523561265=" + startTime + "&entry.1474408630=" + currentTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString();
     if (currentTime - startTime < GM_getValue("groupTime", 0) * 60 && GM_getValue("backscoreBlueAbr", "Blue") != "Blue" && GM_getValue("backscoreRedAbr", "Red") != "Red") { // don't send a cap update if any of the team names are default
         var capUpdateRequest = new XMLHttpRequest();
         capUpdateRequest.open("POST", backscoreUpdate + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((specFlag === true) ? "%20[S]" : "") + "&submit=Submit");
@@ -595,7 +595,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Overtime is off by default in comp groups\n2. Added ability to set custom map lists\n3. Updated comp check functions to support overtime\n4. Added new custom option to support H2 overtime\n5. General Cleanup\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fix overtime defaults to be in line with dev changes from TPFG Update 6.\n2. Update backscore to prepare for backend refresh.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -677,7 +677,6 @@ function leaderReady() {
             console.log("Private group detected, setting up comp settings");
             if (document.getElementsByName("competitiveSettings")[0].checked === false) {
                 document.getElementsByName("competitiveSettings")[0].click(); // Turns on competitive settings
-                tagpro.group.socket.emit("setting", { name: "overtime", value: "false"});
             }
             if (!!document.getElementById("autoscoreLeague") && !!document.getElementById("redTeamAbr")) { // unhide leader elements if the user already had them loaded
                 document.getElementById("autoscoreLeague").style.display = "block";
@@ -685,7 +684,7 @@ function leaderReady() {
                 document.getElementById("blueTeamAbr").style.display = "block";
             }
         }
-    },100);
+    },300);
     GM_setValue("groupId", window.location.href.split("/")[4]);
     var buttonSettings = document.getElementsByClassName("pull-left player-settings")[0];
     var selectList = document.createElement("select"); // selectList is the League selector in group
@@ -787,6 +786,8 @@ function openSettings(setting) {
         GM_setValue("backMLTPOvertime", true);
         newSetting = "Disable H2 Overtime [Currently Enabled]";
         tagpro.group.socket.emit("setting", { name: "overtime", value: "true"});
+        tagpro.group.socket.emit("setting", { name: "overtimeJukeJuice", value: "false"});
+        tagpro.group.socket.emit("setting", { name: "overtimeRespawnIncrement", value: "0"});
         let lastGameData = GM_getValue("tpcsLastGame",[{name:"Red",score:0},{name:"Blue",score:0}]);
         let curRedName = document.getElementsByName("redTeamName")[0].value;
         let curBlueName = document.getElementsByName("blueTeamName")[0].value;
@@ -904,7 +905,7 @@ function submitStats(backscoreRedCaps, backscoreBlueCaps, tableExport, teamNum, 
     var doneCheck = true;
     var z = new Date();
     var endTime = (Math.floor(z.getTime() / 1000) + z.getTimezoneOffset() * 60); // gets end time in UTC
-    var backscoreLink = "https://docs.google.com/forms/d/e/1FAIpQLSe57NOVRdas-tzT4MZ8-XPSkNO3MyKCTrAOyFGXp4PtNQcdkQ/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + backscoreRedCaps + "&entry.1906941178=" + backscoreBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString() + "&entry.1523561265=" + startTime + "&entry.1474408630=" + endTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((endCheck === true) ? "%20[S]" : "") + ((endCompCheck > 0) ? "" : "%20[F]");
+    var backscoreLink = "https://docs.google.com/forms/d/e/1FAIpQLScS1jIXjME3rtCxa6o5QdNSMFyuWqS7kCGiRLwWg-7LyCsYeA/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + backscoreRedCaps + "&entry.1906941178=" + backscoreBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString() + "&entry.1523561265=" + startTime + "&entry.1474408630=" + endTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((endCheck === true) ? "%20[S]" : "") + ((endCompCheck > 0) ? "" : "%20[F]");
     var groupCapLimit = GM_getValue("groupCapLimit", -1);
     if (groupCapLimit == 0) {
         groupCapLimit = -1;
