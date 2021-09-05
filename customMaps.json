@@ -1,15 +1,28 @@
 {
-  "NALTP S24/21 Maps": [
-    {"name": "Audacity 2","mapID": 76614},
-    {"name": "Dash","mapID": 76597},
-    {"name": "Haste","mapID": 67910},
-    {"name": "MERALD","mapID": 66941},
-    {"name": "Moon Base","mapID": 77617},
-    {"name": "Pine","mapID": 78563},
-    {"name": "Sugar Hill","mapID": 69481},
-    {"name": "Rush 2","mapID": 76615},
-    {"name": "Tetanic","mapID": 73515},
-    {"name": "Transilio 2020","mapID": 67148},
-    {"name": "Willow 2","mapID": 76616}
+  "MLTP Tournament Maps": [
+    {"name": "Moon Base","mapID": 82148,"prefix": "um_id/"},
+    {"name": "Nuke","mapID": 78573,"prefix": "um_id/"},
+    {"name": "Oak","mapID": 72336,"prefix": "um_id/"},
+    {"name": "OTI Jardim","mapID": 82144,"prefix": "um_id/"},
+    {"name": "Pine","mapID": 78563,"prefix": "um_id/"},
+    {"name": "Thicket 2","mapID": 83100,"prefix": "um_id/"}
+  ],
+  "TPM CTFNA Maps": [
+    {"name": "Audacity","mapID": 76614,"prefix": "um_id/"},
+    {"name": "Blockade","mapID": 82108,"prefix": "um_id/"},
+    {"name": "Catch-24","mapID": 75168,"prefix": "um_id/"},
+    {"name": "Jardim","mapID": 34525,"prefix": "um_id/"},
+    {"name": "MERALD","mapID": 66941,"prefix": "um_id/"},
+    {"name": "Moon Base","mapID": 82148,"prefix": "um_id/"},
+    {"name": "Oak","mapID": 72336,"prefix": "um_id/"},
+    {"name": "Pilot 3","mapID": 75032,"prefix": "um_id/"},
+    {"name": "Pine","mapID": 78563,"prefix": "um_id/"},
+    {"name": "Rush 2","mapID": 76615,"prefix": "um_id/"},
+    {"name": "Sugar Hill","mapID": 69481,"prefix": "um_id/"},
+    {"name": "Tetanic","mapID": 73515,"prefix": "um_id/"},
+    {"name": "Thicket 2","mapID": 83100,"prefix": "um_id/"},
+    {"name": "TPM Stampede","mapID": 83601,"prefix": "um_id/"},
+    {"name": "Transilio 2020","mapID": 67148,"prefix": "um_id/"},
+    {"name": "Willow 2","mapID": 76616,"prefix": "um_id/"}
   ]
 }

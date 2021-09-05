@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4200
+// @version        0.4300
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -253,7 +253,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
                             if (player.sprites.jersey) {
                                 player.sprites.ball.removeChild(player.sprites.jersey);
                             }
-                            player.sprites.jersey = new PIXI.Sprite(PIXI.Texture.fromImage("http://i.imgur.com/" + jersey[player.team - 1] + ".png"));
+                            player.sprites.jersey = new PIXI.Sprite(PIXI.Texture.fromImage("https://i.imgur.com/" + jersey[player.team - 1] + ".png"));
                             player.sprites.jersey.team = player.team;
                             player.sprites.ball.addChildAt(player.sprites.jersey, 1); //add on top of ball, below other stuff
                             player.sprites.jersey.anchor.x = 0.5;
@@ -367,7 +367,7 @@ if (window.location.href.split(".com")[1].match(/^\/groups\/[a-z]{8}\/*#*[cr]*g*
 function capUpdate(updateRedCaps, updateBlueCaps, startTime, groupPort, tableExport, teamNum, groupServer, specFlag) { // send cap update
     var y = new Date();
     var currentTime = (Math.floor(y.getTime() / 1000) + y.getTimezoneOffset() * 60); // gets start time in UTC
-    var backscoreUpdate = "https://docs.google.com/forms/d/e/1FAIpQLScS1jIXjME3rtCxa6o5QdNSMFyuWqS7kCGiRLwWg-7LyCsYeA/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + updateRedCaps + "&entry.1906941178=" + updateBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.1523561265=" + startTime + "&entry.1474408630=" + currentTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString();
+    var backscoreUpdate = "https://docs.google.com/forms/d/e/1FAIpQLSdcUiBlPFLaxLVRWnKPMRm0hsPiEt9Pf-JOKo2vGq8gtbgJoQ/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + updateRedCaps + "&entry.1906941178=" + updateBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.1523561265=" + startTime + "&entry.1474408630=" + currentTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString();
     if (currentTime - startTime < GM_getValue("groupTime", 0) * 60 && GM_getValue("backscoreBlueAbr", "Blue") != "Blue" && GM_getValue("backscoreRedAbr", "Red") != "Red") { // don't send a cap update if any of the team names are default
         var capUpdateRequest = new XMLHttpRequest();
         capUpdateRequest.open("POST", backscoreUpdate + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((specFlag === true) ? "%20[S]" : "") + "&submit=Submit");
@@ -397,23 +397,33 @@ function changeLeader(status) {
 }
 
 function compCheck() {
-    var checkSum = 0;
-    var checkToggles = 0;
-    var extraSettingsNum = document.getElementsByClassName("js-setting-value").length;
-    var defaultSettings = ["Random", "10 Minutes", "No Overtime", "No Capture Limit", "No Mercy Rule", "100% (Default)", "100% (Default)", "100% (Default)", "3 Seconds (Default)", "10 Seconds (Default)", "30 Seconds (Default)", "1 Minute (Default)", "Enabled", "Disabled (Default)", "Disable", "Disable", "Disabled", "Disabled"];
-    for (var i = 1; i < extraSettingsNum; i++) {
-        if (i == 2) {
-            continue;
-        }
-        var extraSetting = document.getElementsByClassName("js-setting-value")[i].innerText;
-        if (extraSetting == defaultSettings[i]) {
+    let checkSum = 0;
+    let extraSettingsNum = document.getElementsByClassName("js-setting-value").length;
+    let defaultSettings = ["Random","10 Minutes","No Overtime","No Capture Limit","No Mercy Rule","100% (Default)","100% (Default)","100% (Default)","3 Seconds (Default)","10 Seconds (Default)","30 Seconds (Default)","1 Minute (Default)","Enabled","Disabled (Default)","Disable","Disable","Disabled","Disabled"];
+    // This only works if the group settings don't change, so this needs to be updated if the group settings change
+    if ( document.getElementsByClassName("js-setting-value").length < 18 )
+    {
+        return 0;
+    }
+    for (let i = 3; i <= 17; i++) {
+        if (document.getElementsByClassName("js-setting-value")[i].innerText == defaultSettings[i]) {
             checkSum++;
         }
-        if (extraSetting == defaultSettings[i] && i >= 14) {
-            checkToggles++;
-        }
     }
-    return [checkSum, checkToggles];
+    if (checkSum == 15)
+    {
+        checkSum = 2;
+    }
+    else if (document.getElementsByClassName("js-setting-value")[14].innerText == "Disable" &&
+             document.getElementsByClassName("js-setting-value")[15].innerText == "Disable")
+    {
+        checkSum = 1;
+    }
+    else
+    {
+        checkSum = 0;
+    }
+    return checkSum;
 }
 
 function download(content, fileName, contentType) { // this function exports game data into a json file
@@ -524,17 +534,11 @@ function groupEscape(group, checkVersion) {
         }
 
         var escapeCheck = compCheck();
-        if (escapeCheck[0] >= 15 && escapeCheck[1] == 4) {
-            if (escapeCheck[0] == 16 || document.getElementsByClassName("js-setting-value")[1].innerText != "10 Minutes") { // If minutes is the only thing which doesn't match, then it's still a legal comp game
-                GM_setValue("compCheck", 2); // state 2 matches a standard comp game
-                getJerseys();
-            }
-            else {
-                GM_setValue("compCheck", 1); // state 1 matches a comp game with non-default settings (ex. 1 second boost)
-                getJerseys();
-            }
+        if (escapeCheck == 2) {
+            GM_setValue("compCheck", 2); // state 2 matches a standard comp game
+            getJerseys();
         }
-        else if (escapeCheck[1] == 4) {
+        else if (escapeCheck == 1) {
             GM_setValue("compCheck", 1);
             getJerseys();
         }
@@ -570,7 +574,14 @@ function groupReady(isLeader) { // grab necessary info from the group
                 for (let j = 0; j < mapRequest.response[mapTestKeys[i]].length; j++) {
                     let currentOption = document.createElement("option");
                     currentOption.text = currentList[j].name;
-                    currentOption.value = "id/"+currentList[j].mapID.toString();
+                    if (currentList[j].prefix)
+                    {
+                        currentOption.value = currentList[j].prefix + currentList[j].mapID.toString();
+                    }
+                    else
+                    {
+                        currentOption.value = "um_id/"+currentList[j].mapID.toString();
+                    }
                     currentLabel.appendChild(currentOption);
                 }
                 document.getElementsByName("map")[1].appendChild(currentLabel);
@@ -595,7 +606,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fix overtime defaults to be in line with dev changes from TPFG Update 6.\n2. Update backscore to prepare for backend refresh.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fix comp check to be in line with group settings changes by devs\n2. Fix custom maps input to be in line with group changes by devs\n3. Remove dependency on competitive toggle in groups\n4. Update backscore link\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -675,9 +686,14 @@ function leaderReady() {
     setTimeout(function(){
         document.getElementById("pug-btn").onclick = function() { // If group is private, turn the group into a comp game
             console.log("Private group detected, setting up comp settings");
-            if (document.getElementsByName("competitiveSettings")[0].checked === false) {
-                document.getElementsByName("competitiveSettings")[0].click(); // Turns on competitive settings
-            }
+            // comp setting toggle is unreliable for multiple reasons, so set group settings manually
+            tagpro.group.socket.emit("setting", {name: "time", value: "10"});
+            tagpro.group.socket.emit("setting", {name: "overtime", value: "false"});
+            tagpro.group.socket.emit("setting", {name: "mercyRule", value: "0"});
+            tagpro.group.socket.emit("setting", {name: "noScript", value: "true"});
+            tagpro.group.socket.emit("setting", {name: "respawnWarnings", value: "false"});
+            tagpro.group.socket.emit("setting", {name: "overtimeRespawnIncrement", value: "0"});
+            tagpro.group.socket.emit("setting", {name: "overtimeJukeJuice", value: "false"});
             if (!!document.getElementById("autoscoreLeague") && !!document.getElementById("redTeamAbr")) { // unhide leader elements if the user already had them loaded
                 document.getElementById("autoscoreLeague").style.display = "block";
                 document.getElementById("redTeamAbr").style.display = "block";
@@ -739,8 +755,8 @@ function leaderReady() {
         };
     }
     document.getElementById("launch-private-btn").onmouseover = function () {
-        var alertCheck = compCheck()[0];
-        if (alertCheck == 13) { // all checks passed, so enter abbr check
+        var alertCheck = compCheck();
+        if (alertCheck == 2 && document.getElementsByClassName("js-setting-value")[1].innerText == "10 Minutes") { // all checks passed, so enter abbr check
             var checkTime = new Date();
             var checkProcess = (Math.floor(checkTime.getTime() / 1000) + checkTime.getTimezoneOffset() * 60); // get the current time
             var oldId = GM_getValue("launchGroupId","none"); // last group ID
@@ -905,7 +921,7 @@ function submitStats(backscoreRedCaps, backscoreBlueCaps, tableExport, teamNum, 
     var doneCheck = true;
     var z = new Date();
     var endTime = (Math.floor(z.getTime() / 1000) + z.getTimezoneOffset() * 60); // gets end time in UTC
-    var backscoreLink = "https://docs.google.com/forms/d/e/1FAIpQLScS1jIXjME3rtCxa6o5QdNSMFyuWqS7kCGiRLwWg-7LyCsYeA/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + backscoreRedCaps + "&entry.1906941178=" + backscoreBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString() + "&entry.1523561265=" + startTime + "&entry.1474408630=" + endTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((endCheck === true) ? "%20[S]" : "") + ((endCompCheck > 0) ? "" : "%20[F]");
+    var backscoreLink = "https://docs.google.com/forms/d/e/1FAIpQLSdcUiBlPFLaxLVRWnKPMRm0hsPiEt9Pf-JOKo2vGq8gtbgJoQ/formResponse?entry.133949532=" + GM_getValue("backscoreRedAbr", "Red") + "&entry.454687569=" + GM_getValue("backscoreBlueAbr", "Blue") + "&entry.184122371=" + backscoreRedCaps + "&entry.1906941178=" + backscoreBlueCaps + "&entry.2120828603=" + groupServer + "&entry.1696460484=" + GM_getValue("groupId", "none") + "&entry.968816448=" + GM_getValue("groupMap", "none") + "&entry.2065162742=" + encodeURIComponent(tableExport.toString()) + "&entry.2098213735=" + teamNum.toString() + "&entry.1523561265=" + startTime + "&entry.1474408630=" + endTime + "&entry.1681155627=" + groupPort + "&entry.1189129646=" + GM_getValue("groupTime", "none") + "&entry.197322272=" + GM_getValue("backscorePlayer", "Some%20Ball") + ((endCheck === true) ? "%20[S]" : "") + ((endCompCheck > 0) ? "" : "%20[F]");
     var groupCapLimit = GM_getValue("groupCapLimit", -1);
     if (groupCapLimit == 0) {
         groupCapLimit = -1;
