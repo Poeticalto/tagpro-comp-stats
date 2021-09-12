@@ -5,80 +5,74 @@
 	},
 	"Majors": {
 		"Dallas": {
-			"??": "MQUE",
-			"Holdin' Gate Warriors": "MHGW",
-			"Los Angeles Angles": "MLAA",
-			"Marble Madness": "MMBM",
-			"Miami Ballphins": "MMIA",
-			"Pupkin Pi": "MPKP",
-			"Snipe Hunt": "MSNI",
-			"Someday Service Choir": "MSSC"
+      "ALL CAPS": "MAC",
+			"CircleJukers": "MCJK",
+      "Ghostboosters": "MGB",
+      "Holdin' Gate Warriors": "MHGW",
+      "Miami Ballphins": "MMIA",
+      "Mumble Cappers": "MMBC",
+      "Snipe Hunt": "MSNI",
+      "Willy MonkaS": "MWMS"
 		}
 	},
 	"Minors": {
 		"Dallas": {
-			"Insane Cap Possee": "NICP",
-			"Kansas City Mapache Chiefs": "NKCX",
-			"Lemon Merangle Pi": "NLMP",
-			"Miami Ballphins": "NMIA",
-			"Someday Service Choir": "NSSC",
 			"Two Balls One Pup": "N2BP",
-			"WCYDinos": "NDNO",
-			"Weed the People": "NWTP"
+      "Blitz Arena": "NBLZ",
+      "Cheek Seeking Missiles": "NCSM",
+      "CircleJukers": "NCJK",
+      "Holdin' Gate Warriors": "NHGW",
+      "ReSet Theory": "NRST",
+      "RoundCloud Cappers": "NRCC",
+      "Snipe Hunt": "NSNI"
 		}
 	},
 	"NLTP-A": {
-		"Seattle": {
-			"Pingfield Isotopes": "AISO"
+		"San Francisco": {
+			"Land Before Timers": "ALBT"
 		},
 		"Los Angeles": {
-			"The Land Before Timers": "ALBT"
+			"80 Degrees": "A80D"
 		},
 		"Central": {
-			"Legends of the Splittin' Temple": "ALST",
-			"Miami Ballphins": "AMIA"
+			"Manipulation Station": "ANIP",
+      "The Capaliers": "ACAP"
 		},
 		"Chicago": {
-			"Bank of Americaps": "ABOA",
-			"Manipulation Station": "ANIP"	
+			"Bohemian Cap City": "ABCC",
+      "Legends of the Splittin' Temple": "ALST"
 		},
 		"Atlanta": {
-			"The Krusty Grabs": "AKGB"
+      "Miami Ballphins": "AMIA",
+      "Puppet Casters": "APUC"
 		},
 		"Toronto": {
-			"??": "AQUE",
-			"Super Monkey Balls": "ASMB"
+			"Young Hotties": "AYHT"
 		},
 		"New York": {
-			"Bohemian Cap City": "ABCC",
-			"The Handoff God": "ATHG",
 			"Weed the People": "AWTP"
 		}
 	},
 	"NLTP-B": {
 		"San Francisco": {
-			"Pingfield Isotopes": "BISO"
-		},
-		"Los Angeles": {
-			"The Land Before Timers": "BLBT"
+			"Land Before Timers": "ALBT"
 		},
 		"Central": {
-			"Bohemian Cap City": "BBCC",
-			"Legends of the Splittin' Temple": "BLST",
-			"The Krusty Grabs": "BKGB"
+			"Manipulation Station": "ANIP",
+      "Miami Ballphins": "AMIA",
+      "The Capaliers": "ACAP"
 		},
 		"Chicago": {
-			"Manipulation Station": "BNIP"	
+      "80 Degrees": "A80D",
+			"Bohemian Cap City": "ABCC",
+      "Legends of the Splittin' Temple": "ALST",
+      "Young Hotties": "AYHT"
 		},
 		"Toronto": {
-			"Bank of Americaps": "BBOA",
-			"Miami Ballphins": "BMIA",
-			"Super Monkey Balls": "BSMB"
+			"Puppet Casters": "APUC"
 		},
 		"New York": {
-			"??": "BQUE",
-			"The Handoff God": "BTHG",
-			"Weed the People": "BWTP"
+			"Weed the People": "AWTP"
 		}
 	}
 }

@@ -1,28 +1,59 @@
 {
-  "MLTP Tournament Maps": [
-    {"name": "Moon Base","mapID": 82148,"prefix": "um_id/"},
-    {"name": "Nuke","mapID": 78573,"prefix": "um_id/"},
-    {"name": "Oak","mapID": 72336,"prefix": "um_id/"},
-    {"name": "OTI Jardim","mapID": 82144,"prefix": "um_id/"},
-    {"name": "Pine","mapID": 78563,"prefix": "um_id/"},
-    {"name": "Thicket 2","mapID": 83100,"prefix": "um_id/"}
-  ],
-  "TPM CTFNA Maps": [
+  "NALTP S25 Maps": [
     {"name": "Audacity","mapID": 76614,"prefix": "um_id/"},
-    {"name": "Blockade","mapID": 82108,"prefix": "um_id/"},
-    {"name": "Catch-24","mapID": 75168,"prefix": "um_id/"},
+    {"name": "Haste","mapID": 67901,"prefix": "um_id/"},
     {"name": "Jardim","mapID": 34525,"prefix": "um_id/"},
     {"name": "MERALD","mapID": 66941,"prefix": "um_id/"},
     {"name": "Moon Base","mapID": 82148,"prefix": "um_id/"},
     {"name": "Oak","mapID": 72336,"prefix": "um_id/"},
+    {"name": "OTI Jardim","mapID": 82144,"prefix": "um_id/"},
     {"name": "Pilot 3","mapID": 75032,"prefix": "um_id/"},
     {"name": "Pine","mapID": 78563,"prefix": "um_id/"},
-    {"name": "Rush 2","mapID": 76615,"prefix": "um_id/"},
+    {"name": "Pine","mapID": 78563,"prefix": "um_id/"},
     {"name": "Sugar Hill","mapID": 69481,"prefix": "um_id/"},
-    {"name": "Tetanic","mapID": 73515,"prefix": "um_id/"},
     {"name": "Thicket 2","mapID": 83100,"prefix": "um_id/"},
-    {"name": "TPM Stampede","mapID": 83601,"prefix": "um_id/"},
     {"name": "Transilio 2020","mapID": 67148,"prefix": "um_id/"},
     {"name": "Willow 2","mapID": 76616,"prefix": "um_id/"}
+  ],
+  "TPM CTFNA Maps": [
+    {"name": "Blockade","mapID": 82108,"prefix": "um_id/"},
+    {"name": "Catch-24","mapID": 75168,"prefix": "um_id/"},
+    {"name": "Rush 2","mapID": 76615,"prefix": "um_id/"},
+    {"name": "Tetanic","mapID": 73515,"prefix": "um_id/"},
+    {"name": "TPM Stampede","mapID": 83601,"prefix": "um_id/"}
+  ],
+  "TPM CTFEU Maps": [
+    {"name": "A Snack-type Map","mapID": 79976,"prefix": "um_id/"},
+    {"name": "Asido","mapID": 82707,"prefix": "um_id/"},
+    {"name": "Bench Press","mapID": 81679,"prefix": "um_id/"},
+    {"name": "Cool S","mapID": 75836,"prefix": "um_id/"},
+    {"name": "Dash","mapID": 76597,"prefix": "um_id/"},
+    {"name": "Haste (EU)","mapID": 70261,"prefix": "um_id/"},
+    {"name": "Jade","mapID": 78566,"prefix": "um_id/"},
+    {"name": "Lemon","mapID": 61686,"prefix": "um_id/"},
+    {"name": "Market","mapID": 25207,"prefix": "um_id/"},
+    {"name": "Nuke","mapID": 78573,"prefix": "um_id/"},
+    {"name": "Oak (EU/OCE)","mapID": 80350,"prefix": "um_id/"},
+    {"name": "Passiona 0.8","mapID": 83172,"prefix": "um_id/"},
+    {"name": "Salix","mapID": 78568,"prefix": "um_id/"},
+    {"name": "Schnitzel","mapID": 78571,"prefix": "um_id/"},
+    {"name": "Valor","mapID": 78562,"prefix": "um_id/"}
+  ],
+  "TPM CTFOCE Maps": [
+    {"name": "Apparition 2021","mapID": 82706,"prefix": "um_id/"},
+    {"name": "Audacity 1.5 (headshot edit)","mapID": 77937,"prefix": "um_id/"},
+    {"name": "Bench Press","mapID": 83625,"prefix": "um_id/"},
+    {"name": "Constriction","mapID": 80547,"prefix": "um_id/"},
+    {"name": "EMERALD","mapID": 4065,"prefix": "um_id/"},
+    {"name": "Gutterballs","mapID": 83834,"prefix": "um_id/"},
+    {"name": "Haste (OCE)","mapID": 68014,"prefix": "um_id/"},
+    {"name": "Knight","mapID": 83681,"prefix": "um_id/"},
+    {"name": "Market (OCE)","mapID": 25209,"prefix": "um_id/"},
+    {"name": "Pretzel","mapID": 77660,"prefix": "um_id/"},
+    {"name": "Scorpio","mapID": 69165,"prefix": "um_id/"},
+    {"name": "Stampede","mapID": 83048,"prefix": "um_id/"},
+    {"name": "TransiliOLTP 2021","mapID": 79383,"prefix": "um_id/"},
+    {"name": "Vardo","mapID": 49200,"prefix": "um_id/"},
+    {"name": "Willow","mapID": 71009,"prefix": "um_id/"}
   ]
 }
