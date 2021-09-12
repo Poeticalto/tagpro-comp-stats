@@ -1,23 +1,23 @@
 {
-	"Leagues": {
-		"NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B"],
-		"NA Tournaments": ["TPA"]
-	},
-	"Majors": {
-		"Dallas": {
+  "Leagues": {
+    "NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B"],
+    "NA Tournaments": ["TPA"]
+  },
+  "Majors": {
+    "Dallas": {
       "ALL CAPS": "MAC",
-			"CircleJukers": "MCJK",
+      "CircleJukers": "MCJK",
       "Ghostboosters": "MGB",
       "Holdin' Gate Warriors": "MHGW",
       "Miami Ballphins": "MMIA",
       "Mumble Cappers": "MMBC",
       "Snipe Hunt": "MSNI",
       "Willy MonkaS": "MWMS"
-		}
-	},
-	"Minors": {
-		"Dallas": {
-			"Two Balls One Pup": "N2BP",
+    }
+  },
+  "Minors": {
+    "Dallas": {
+      "Two Balls One Pup": "N2BP",
       "Blitz Arena": "NBLZ",
       "Cheek Seeking Missiles": "NCSM",
       "CircleJukers": "NCJK",
@@ -25,54 +25,54 @@
       "ReSet Theory": "NRST",
       "RoundCloud Cappers": "NRCC",
       "Snipe Hunt": "NSNI"
-		}
-	},
-	"NLTP-A": {
-		"San Francisco": {
-			"Land Before Timers": "ALBT"
-		},
-		"Los Angeles": {
-			"80 Degrees": "A80D"
-		},
-		"Central": {
-			"Manipulation Station": "ANIP",
+    }
+  },
+  "NLTP-A": {
+    "San Francisco": {
+      "Land Before Timers": "ALBT"
+    },
+    "Los Angeles": {
+      "80 Degrees": "A80D"
+    },
+    "Central": {
+      "Manipulation Station": "ANIP",
       "The Capaliers": "ACAP"
-		},
-		"Chicago": {
-			"Bohemian Cap City": "ABCC",
+    },
+    "Chicago": {
+      "Bohemian Cap City": "ABCC",
       "Legends of the Splittin' Temple": "ALST"
-		},
-		"Atlanta": {
+    },
+    "Atlanta": {
       "Miami Ballphins": "AMIA",
       "Puppet Casters": "APUC"
-		},
-		"Toronto": {
-			"Young Hotties": "AYHT"
-		},
-		"New York": {
-			"Weed the People": "AWTP"
-		}
-	},
-	"NLTP-B": {
-		"San Francisco": {
-			"Land Before Timers": "ALBT"
-		},
-		"Central": {
-			"Manipulation Station": "ANIP",
-      "Miami Ballphins": "AMIA",
-      "The Capaliers": "ACAP"
-		},
-		"Chicago": {
-      "80 Degrees": "A80D",
-			"Bohemian Cap City": "ABCC",
-      "Legends of the Splittin' Temple": "ALST",
+    },
+    "Toronto": {
       "Young Hotties": "AYHT"
-		},
-		"Toronto": {
-			"Puppet Casters": "APUC"
-		},
-		"New York": {
-			"Weed the People": "AWTP"
-		}
-	}
+    },
+    "New York": {
+      "Weed the People": "AWTP"
+    }
+  },
+  "NLTP-B": {
+    "San Francisco": {
+      "Land Before Timers": "BLBT"
+    },
+    "Central": {
+      "Manipulation Station": "BNIP",
+      "Miami Ballphins": "BMIA",
+      "The Capaliers": "BCAP"
+    },
+    "Chicago": {
+      "80 Degrees": "B80D",
+      "Bohemian Cap City": "BBCC",
+      "Legends of the Splittin' Temple": "BLST",
+      "Young Hotties": "BYHT"
+    },
+    "Toronto": {
+      "Puppet Casters": "BPUC"
+    },
+    "New York": {
+      "Weed the People": "BWTP"
+    }
+  }
 }
