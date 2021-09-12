@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4300
+// @version        0.4301
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -565,7 +565,6 @@ function groupReady(isLeader) { // grab necessary info from the group
         mapRequest.responseType = "json";
         mapRequest.send();
         mapRequest.onload = function() {
-            mapRequest.response;
             let mapTestKeys = Object.keys(mapRequest.response);
             for (let i = 0; i < mapTestKeys.length; i++) {
                 let currentLabel = document.createElement("optgroup");
@@ -606,7 +605,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fix comp check to be in line with group settings changes by devs\n2. Fix custom maps input to be in line with group changes by devs\n3. Remove dependency on competitive toggle in groups\n4. Update backscore link\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Replace swapTeams with API call instead of click() for reliability.\n2. General code cleanup.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -808,7 +807,7 @@ function openSettings(setting) {
         let curRedName = document.getElementsByName("redTeamName")[0].value;
         let curBlueName = document.getElementsByName("blueTeamName")[0].value;
         if (document.getElementsByName("redTeamName")[0].value == lastGameData[0].name) {
-            document.getElementById("swapTeams-btn").click();
+            tagpro.group.socket.emit("swapTeams");
             if (curRedName == lastGameData[0].name) {
                 tagpro.group.socket.emit("setting", { name: "blueTeamScore", value: lastGameData[0].score.toString()});
             }
