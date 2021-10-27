@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4301
+// @version        0.4302
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -605,7 +605,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Replace swapTeams with API call instead of click() for reliability.\n2. General code cleanup.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Disabled pup indicators by default when creating private group.\n2. Added explanation on how to disable abbreviation checks when activated.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -693,6 +693,7 @@ function leaderReady() {
             tagpro.group.socket.emit("setting", {name: "respawnWarnings", value: "false"});
             tagpro.group.socket.emit("setting", {name: "overtimeRespawnIncrement", value: "0"});
             tagpro.group.socket.emit("setting", {name: "overtimeJukeJuice", value: "false"});
+            tagpro.group.socket.emit("setting", {name: "pupIndicators", value: "false"});
             if (!!document.getElementById("autoscoreLeague") && !!document.getElementById("redTeamAbr")) { // unhide leader elements if the user already had them loaded
                 document.getElementById("autoscoreLeague").style.display = "block";
                 document.getElementById("redTeamAbr").style.display = "block";
@@ -768,7 +769,7 @@ function leaderReady() {
             if (((checkProcess - oldTime) >= (15*60) || currentId != oldId) && teamNameCheck === false && GM_getValue("backAbbrCheck", true) === true) { // If it has been 15 minutes or the group has changed since the last check, and abbr check failed, and user allowed notifs, then execute
                 GM_setValue("checkTime", checkProcess);
                 GM_setValue("launchGroupId", currentId);
-                window.alert("A competitive game was detected without proper abbreviations!\nMake sure your abbreviations are set before launching!");
+                window.alert("A competitive game was detected without proper abbreviations!\nMake sure your abbreviations are set before launching!\nIf you want to disable these checks, click \"Disable Abbreviation Checks\" in the league selector.");
             }
         }
     }
