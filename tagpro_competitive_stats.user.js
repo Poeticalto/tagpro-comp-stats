@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4302
+// @version        0.4303
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -605,7 +605,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Disabled pup indicators by default when creating private group.\n2. Added explanation on how to disable abbreviation checks when activated.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Set default behavior of groups to use classic rolling bomb.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -694,6 +694,7 @@ function leaderReady() {
             tagpro.group.socket.emit("setting", {name: "overtimeRespawnIncrement", value: "0"});
             tagpro.group.socket.emit("setting", {name: "overtimeJukeJuice", value: "false"});
             tagpro.group.socket.emit("setting", {name: "pupIndicators", value: "false"});
+            tagpro.group.socket.emit("setting", {"name":"rollingBombBehavior",value:"classic"});
             if (!!document.getElementById("autoscoreLeague") && !!document.getElementById("redTeamAbr")) { // unhide leader elements if the user already had them loaded
                 document.getElementById("autoscoreLeague").style.display = "block";
                 document.getElementById("redTeamAbr").style.display = "block";
