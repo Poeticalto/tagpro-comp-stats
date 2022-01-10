@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4400
+// @version        0.4401
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -399,13 +399,13 @@ function changeLeader(status) {
 function compCheck() {
     let checkSum = 0;
     let extraSettingsNum = document.getElementsByClassName("js-setting-value").length;
-    let defaultSettings = ["Random","10 Minutes","No Overtime","No Capture Limit","No Mercy Rule","100% (Default)","100% (Default)","100% (Default)","3 Seconds (Default)","10 Seconds (Default)","30 Seconds (Default)","1 Minute (Default)","Enabled","Disabled (Default)","Disable","Disable","Enabled","Disabled","Disabled","Default"];
+    let defaultSettings = ["Classic","Random","10 Minutes","No Overtime","No Capture Limit","No Mercy Rule","100% (Default)","100% (Default)","100% (Default)","3 Seconds (Default)","10 Seconds (Default)","30 Seconds (Default)","1 Minute (Default)","Enabled","Disabled (Default)","Disable","Disable","Enabled","Disabled","Disabled","Default"];
     // This only works if the group settings don't change, so this needs to be updated if the group settings change
-    if ( document.getElementsByClassName("js-setting-value").length < 20 )
+    if ( document.getElementsByClassName("js-setting-value").length < 21 )
     {
         return 0;
     }
-    for (let i = 3; i <= 19; i++) {
+    for (let i = 4; i <= 20; i++) {
         if (document.getElementsByClassName("js-setting-value")[i].innerText == defaultSettings[i]) {
             checkSum++;
         }
@@ -606,7 +606,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Set default behavior of groups to use default (new) rolling bomb and new pup indicators.\n2. Added settings option to reset group settings to NALTP comp defaults.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fixed issue with game mode affecting comp check.\n2. Fix capitalization in settings.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -716,7 +716,7 @@ function leaderReady() {
     abbrRequest.onload = function() {
         GM_setValue("autoscoreAbr", abbrRequest.response);
         var array = abbrRequest.response.Leagues;
-        array["TagPro Competitive Stats Settings"] = [GM_getValue("backMLTPOvertime", false) ? "Disable H2 Overtime [Currently Enabled]" : "Enable H2 Overtime [Currently Disabled]", "Reset group to NALTP Comp Defaults", GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]", GM_getValue("tpcsSoundCheck", true) ? "Disable Sound Checks [Currently Enabled]" : "Enable Sound Checks [Currently Disabled]"];
+        array["TagPro Competitive Stats Settings"] = [GM_getValue("backMLTPOvertime", false) ? "Disable H2 Overtime [Currently Enabled]" : "Enable H2 Overtime [Currently Disabled]", "Reset Group to NALTP Comp Defaults", GM_getValue("backJerseyFlag", true) ? "Disable Jerseys [Currently Enabled]" : "Enable Jerseys [Currently Disabled]", GM_getValue("backJerseySpin", true) ? "Disable Jersey Spin [Currently Enabled]" : "Enable Jersey Spin [Currently Disabled]", GM_getValue("backLocalStorage", false) ? "Disable Saving Local Stats [Currently Enabled]" : "Enable Saving Local Stats [Currently Disabled]", GM_getValue("backAbbrCheck", true) ? "Disable Abbreviation Checks [Currently Enabled]" : "Enable Abbreviation Checks [Currently Disabled]", GM_getValue("tpcsSoundCheck", true) ? "Disable Sound Checks [Currently Enabled]" : "Enable Sound Checks [Currently Disabled]"];
         var noneOption = document.createElement("option");
         noneOption.value = "None";
         noneOption.text = "None";
@@ -831,7 +831,7 @@ function openSettings(setting) {
             }
         }
     }
-    else if (setting == "Reset group to NALTP Comp Defaults") {
+    else if (setting == "Reset Group to NALTP Comp Defaults") {
       // otherwise known as every single possible game setting in groups (except server)
       resetGroupSettings();
     }
@@ -897,6 +897,8 @@ function pad(t, e) {
 }
 
 function resetGroupSettings() {
+  tagpro.group.socket.emit("setting", {name: "mode", value: "classic"});
+  tagpro.group.socket.emit("setting", {name: "selectMaps", value: "true"});
   tagpro.group.socket.emit("setting", {name: "redTeamName", value: "Red"});
   tagpro.group.socket.emit("setting", {name: "redTeamScore", value: "0"});
   tagpro.group.socket.emit("setting", {name: "blueTeamName", value: "Blue"});
@@ -1024,7 +1026,7 @@ function timeFromSeconds(t, e) {
 
 function updateTeamAbr() { // This function fills in the team abbreviations on the group page
     var abrJson = GM_getValue("autoscoreAbr");
-    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]","Disable Sound Checks [Currently Enabled]", "Enable Sound Checks [Currently Disabled]", "Disable H2 Overtime [Currently Enabled]", "Enable H2 Overtime [Currently Disabled]","Reset group to NALTP Comp Defaults"];
+    var settingsList = ["Disable Jerseys [Currently Enabled]", "Enable Jerseys [Currently Disabled]", "Disable Jersey Spin [Currently Enabled]", "Enable Jersey Spin [Currently Disabled]", "Disable Saving Local Stats [Currently Enabled]", "Enable Saving Local Stats [Currently Disabled]", "Disable Abbreviation Checks [Currently Enabled]", "Enable Abbreviation Checks [Currently Disabled]","Disable Sound Checks [Currently Enabled]", "Enable Sound Checks [Currently Disabled]", "Disable H2 Overtime [Currently Enabled]", "Enable H2 Overtime [Currently Disabled]","Reset Group to NALTP Comp Defaults"];
     if (settingsList.indexOf(document.getElementById("autoscoreLeague").value) >= 0) {
         openSettings(document.getElementById("autoscoreLeague").value);
         document.getElementById("autoscoreLeague").value = GM_getValue("autoscoreImport", "none");
