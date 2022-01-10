@@ -5,26 +5,30 @@
   },
   "Majors": {
     "Dallas": {
-      "ALL CAPS": "MAC",
-      "CircleJukers": "MCJK",
-      "Ghostboosters": "MGB",
+      "Harlem Globebotters": "MHGB",
       "Holdin' Gate Warriors": "MHGW",
+      "Los Ankeles Breakers": "MLAB",
       "Miami Ballphins": "MMIA",
-      "Mumble Cappers": "MMBC",
+      "Puparazzi": "MPUP",
+      "ReSet Theory": "MRST",
       "Snipe Hunt": "MSNI",
-      "Willy MonkaS": "MWMS"
+      "The Knights Who Say Re!": "MKSR",
+      "The Pelicaps": "MPLC",
+      "Toronto Captors": "MTOC"
     }
   },
   "Minors": {
     "Dallas": {
-      "Two Balls One Pup": "N2BP",
-      "Blitz Arena": "NBLZ",
-      "Cheek Seeking Missiles": "NCSM",
-      "CircleJukers": "NCJK",
+      "??": "NQUE",
+      "Harlem Globebotters": "NHGB",
       "Holdin' Gate Warriors": "NHGW",
+      "Los Ankeles Breakers": "NLAB",
+      "Miami Ballphins": "NMIA",
       "ReSet Theory": "NRST",
-      "RoundCloud Cappers": "NRCC",
-      "Snipe Hunt": "NSNI"
+      "Rolling Loud": "NRLL",
+      "The Capaliers": "NCAP",
+      "The Knights Who Say Re!": "NKSR",
+      "Yo Grabba Grabba": "NYGG"
     }
   },
   "NLTP-A": {
