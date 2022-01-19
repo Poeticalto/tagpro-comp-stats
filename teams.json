@@ -55,24 +55,24 @@
   },
   "NLTP-B": {
     "San Francisco": {
-      "Puparazzi": "APUP"
+      "Puparazzi": "BPUP"
     },
     "Los Angeles": {
-      "The Land Before Timers": "ALBT"
+      "The Land Before Timers": "BLBT"
     },
     "Central": {
-      "Miami Ballphins": "AMIA",
-      "Misaki Bombs": "AMSB",
-      "OD Future": "AODD",
-      "The Last Flairbenders": "ATLF"
+      "Miami Ballphins": "BMIA",
+      "Misaki Bombs": "BMSB",
+      "OD Future": "BODD",
+      "The Last Flairbenders": "BTLF"
     },
     "Chicago": {
-      "Legends of the Splittin' Temple": "ALST",
-      "Weed the People": "AWTP",
-      "WCYDinos": "ADNO"
+      "Legends of the Splittin' Temple": "BLST",
+      "Weed the People": "BWTP",
+      "WCYDinos": "BDNO"
     },
     "New York": {
-      "Bohemian Cap City": "ABCC"
+      "Bohemian Cap City": "BBCC"
     }
   }
 }
