@@ -34,19 +34,23 @@
   ],
   "TPM CTFNA Maps": [
     {"name": "Catch-24 (75168)","mapID": 75168,"prefix": "um_id/"},
-    {"name": "Oak (72336)","mapID": 72336,"prefix": "um_id/"},
-    {"name": "Pilot 3 (75032)","mapID": 75032,"prefix": "um_id/"},
     {"name": "Rush 2 (76615)","mapID": 76615,"prefix": "um_id/"},
     {"name": "Sugar Hill (69481)","mapID": 69481,"prefix": "um_id/"},
-    {"name": "Tetanic (73515)","mapID": 73515,"prefix": "um_id/"},
-    {"name": "Thicket 2 (83100)","mapID": 83100,"prefix": "um_id/"}
+    {"name": "Tetanic (73515)","mapID": 73515,"prefix": "um_id/"}
   ],
   "NALTP S26 Maps": [
+    {"name": "Apparition 2021 (82849)","mapID": 82849,"prefix": "um_id/"},
     {"name": "Audacity 2 (76614)","mapID": 76614,"prefix": "um_id/"},
+    {"name": "Market (25208)","mapID": 25208,"prefix": "um_id/"},
     {"name": "Moon Base (82148)","mapID": 82148,"prefix": "um_id/"},
+    {"name": "Oak (72336)","mapID": 72336,"prefix": "um_id/"},
     {"name": "OTI Jardim (82144)","mapID": 82144,"prefix": "um_id/"},
     {"name": "OTI MERALD (85322)","mapID": 85322,"prefix": "um_id/"},
     {"name": "Pine (78563)","mapID": 78563,"prefix": "um_id/"},
+    {"name": "Pilot 3 (75032)","mapID": 75032,"prefix": "um_id/"},
+    {"name": "Safe Space Scorpio (77454)","mapID": 77454,"prefix": "um_id/"},
+    {"name": "Some Ring (85578)","mapID": 85578,"prefix": "um_id/"},
+    {"name": "Thicket 2 (83100)","mapID": 83100,"prefix": "um_id/"},
     {"name": "Transilio 2022 (85323)","mapID": 85323,"prefix": "um_id/"},    
     {"name": "Willow 2 (76616)","mapID": 76616,"prefix": "um_id/"}
   ]
