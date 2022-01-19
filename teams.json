@@ -32,26 +32,22 @@
     }
   },
   "NLTP-A": {
-    "San Francisco": {
-      "Land Before Timers": "ALBT"
-    },
     "Los Angeles": {
-      "80 Degrees": "A80D"
+      "The Land Before Timers": "ALBT"
     },
     "Central": {
-      "Manipulation Station": "ANIP",
-      "The Capaliers": "ACAP"
+      "Bohemian Cap City": "ABCC",
+      "Miami Ballphins": "AMIA",
+      "Misaki Bombs": "AMSB",
+      "OD Future": "AODD",
+      "The Last Flairbenders": "ATLF"
     },
     "Chicago": {
-      "Bohemian Cap City": "ABCC",
       "Legends of the Splittin' Temple": "ALST"
     },
-    "Atlanta": {
-      "Miami Ballphins": "AMIA",
-      "Puppet Casters": "APUC"
-    },
     "Toronto": {
-      "Young Hotties": "AYHT"
+      "Puparazzi": "APUP",
+      "WCYDinos": "ADNO"
     },
     "New York": {
       "Weed the People": "AWTP"
@@ -59,24 +55,24 @@
   },
   "NLTP-B": {
     "San Francisco": {
-      "Land Before Timers": "BLBT"
+      "Puparazzi": "APUP"
+    },
+    "Los Angeles": {
+      "The Land Before Timers": "ALBT"
     },
     "Central": {
-      "Manipulation Station": "BNIP",
-      "Miami Ballphins": "BMIA",
-      "The Capaliers": "BCAP"
+      "Miami Ballphins": "AMIA",
+      "Misaki Bombs": "AMSB",
+      "OD Future": "AODD",
+      "The Last Flairbenders": "ATLF"
     },
     "Chicago": {
-      "80 Degrees": "B80D",
-      "Bohemian Cap City": "BBCC",
-      "Legends of the Splittin' Temple": "BLST",
-      "Young Hotties": "BYHT"
-    },
-    "Toronto": {
-      "Puppet Casters": "BPUC"
+      "Legends of the Splittin' Temple": "ALST",
+      "Weed the People": "AWTP",
+      "WCYDinos": "ADNO"
     },
     "New York": {
-      "Weed the People": "BWTP"
+      "Bohemian Cap City": "ABCC"
     }
   }
 }
