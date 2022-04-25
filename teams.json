@@ -5,16 +5,16 @@
   },
   "Majors": {
     "Dallas": {
+      "Converse Ballstars": "MCBS",
+      "Gateful Dead": "MGFD",
       "Harlem Globebotters": "MHGB",
       "Holdin' Gate Warriors": "MHGW",
+      "Jack in the Blocks": "MJIB",
       "Los Ankeles Breakers": "MLAB",
       "Miami Ballphins": "MMIA",
-      "Puparazzi": "MPUP",
-      "ReSet Theory": "MRST",
-      "Snipe Hunt": "MSNI",
-      "The Knights Who Say Re!": "MKSR",
-      "The Pelicaps": "MPLC",
-      "Toronto Captors": "MTOC"
+      "Returns of the Jedi": "MRTJ",
+      "Smoothie Ping": "MSMP",
+      "ThunderCaps": "MTHC"
     }
   },
   "Minors": {
