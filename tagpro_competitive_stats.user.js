@@ -10,7 +10,7 @@
 // @downloadURL    https://github.com/Poeticalto/tagpro-comp-stats/raw/stable/tagpro_competitive_stats.user.js
 // @grant          GM_getValue
 // @grant          GM_setValue
-// @version        0.4401
+// @version        0.4402
 // ==/UserScript==
 
 // Special thanks to  Destar, Some Ball -1, Ko, and ballparts for their work in this userscript!
@@ -399,7 +399,7 @@ function changeLeader(status) {
 function compCheck() {
     let checkSum = 0;
     let extraSettingsNum = document.getElementsByClassName("js-setting-value").length;
-    let defaultSettings = ["Classic","Random","10 Minutes","No Overtime","No Capture Limit","No Mercy Rule","100% (Default)","100% (Default)","100% (Default)","3 Seconds (Default)","10 Seconds (Default)","30 Seconds (Default)","1 Minute (Default)","Enabled","Disabled (Default)","Disable","Disable","Enabled","Disabled","Disabled","Default"];
+    let defaultSettings = ["Classic","Random","10 Minutes","Overtime","No Capture Limit","No Mercy Rule","100% (Default)","100% (Default)","100% (Default)","3 Seconds (Default)","10 Seconds (Default)","30 Seconds (Default)","1 Minute (Default)","Enabled","Disabled (Default)","Disable","Disable","Enabled","Disabled","Disabled","Default"];
     // This only works if the group settings don't change, so this needs to be updated if the group settings change
     if ( document.getElementsByClassName("js-setting-value").length < 21 )
     {
@@ -606,7 +606,7 @@ function groupReady(isLeader) { // grab necessary info from the group
             if (checkVersion != GM_info.script.version || GM_getValue("tpcsConfirmation", false) === false) {
                 checkVersion = GM_info.script.version;
                 GM_setValue("tpcsCurrentVer",checkVersion);
-                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Fixed issue with game mode affecting comp check.\n2. Fix capitalization in settings.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
+                var updateNotes = "The TagPro Competitive Stats Userscript has been updated to V" + GM_info.script.version + "!\nHere is a summary of updates:\n1. Changed group default to overtime on and Dallas.\nClicking Ok means you accept the changes to this script and the corresponding privacy policy.\nThe full privacy policy and change log can be found by going to the script homepage through the Tampermonkey menu.";
                 GM_setValue("tpcsConfirmation", window.confirm(updateNotes));
             }
         },1000);
@@ -897,6 +897,9 @@ function pad(t, e) {
 }
 
 function resetGroupSettings() {
+  if (document.getElementsByName("server")[0].parentElement.parentElement.style.display === "none") {
+    tagpro.group.socket.emit("setting", {name: "serverSelect", value: "true"});
+  }
   tagpro.group.socket.emit("setting", {name: "mode", value: "classic"});
   tagpro.group.socket.emit("setting", {name: "selectMaps", value: "true"});
   tagpro.group.socket.emit("setting", {name: "redTeamName", value: "Red"});
@@ -904,7 +907,7 @@ function resetGroupSettings() {
   tagpro.group.socket.emit("setting", {name: "blueTeamName", value: "Blue"});
   tagpro.group.socket.emit("setting", {name: "blueTeamScore", value: "0"});
   tagpro.group.socket.emit("setting", {name: "time", value: "10"});
-  tagpro.group.socket.emit("setting", {name: "overtime", value: "false"});
+  tagpro.group.socket.emit("setting", {name: "overtime", value: "true"});
   tagpro.group.socket.emit("setting", {name: "caps", value: "0"});
   tagpro.group.socket.emit("setting", {name: "mercyRule", value: "0"});
   tagpro.group.socket.emit("setting", {name: "accel", value: "1"});
@@ -930,6 +933,27 @@ function resetGroupSettings() {
   tagpro.group.socket.emit("setting", {name: "gravity", value: "false"});
   tagpro.group.socket.emit("setting", {name: "jumpLimit", value: "2"});
   tagpro.group.socket.emit("setting", {name: "speedLimit", value: "true"});
+  // set server as Dallas
+  if (document.getElementsByName("server")[0].children.length > 1) {
+    setDallas();
+  }
+  else {
+    setTimeout(function() {
+      setDallas();
+    }, 200);
+  }
+}
+
+function setDallas() {
+  let serverSelect = document.getElementsByName("server")[0].children;
+  for (let i = (serverSelect.length - 1); i >= 0; i--)
+  {
+    if (serverSelect[i].innerHTML.toLowerCase().indexOf("dallas") !== -1)
+    {
+      tagpro.group.socket.emit("setting", {name: "server", value: serverSelect[i].value});
+      break;
+    }
+  }
 }
 
 function sortByScore(playerArr) { // bubble sort id array based on the score
