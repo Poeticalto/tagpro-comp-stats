@@ -1,6 +1,6 @@
 {
   "Leagues": {
-    "NA Competitive": ["Majors", "Minors", "NLTP-A", "NLTP-B"],
+    "NA Competitive": ["Majors", "Minors", "Novice"],
     "NA Tournaments": ["TPA"]
   },
   "Majors": {
@@ -18,61 +18,35 @@
     }
   },
   "Minors": {
-    "Dallas": {
-      "??": "NQUE",
-      "Harlem Globebotters": "NHGB",
+    "Juke Juice": {
+      "Blue Suede Poosts": "NBSP",
+      "Catalytic Cap Converters": "NCCC",
+      "Get Re or Die Tryin’": "NGRE",
       "Holdin' Gate Warriors": "NHGW",
-      "Los Ankeles Breakers": "NLAB",
       "Miami Ballphins": "NMIA",
-      "ReSet Theory": "NRST",
-      "Rolling Loud": "NRLL",
-      "The Capaliers": "NCAP",
-      "The Knights Who Say Re!": "NKSR",
-      "Yo Grabba Grabba": "NYGG"
+      "Rap Snitch tNISHes": "NRSN"
+    },
+    "Rolling Bomb": {
+      "Centra Limit Theorem": "NCLT",
+      "Harlem GlobeBotters": "NHGB",
+      "Microphone Hunt": "NMIC",
+      "Returns of the Jedi": "NROJ",
+      "Tears for Spheres": "NTRS",
+      "ThunderCaps": "NTHC"
+    },
+    "TagPro": {
+      "Big Cap Rescue": "NBCR",
+      "Jack in the Blocks": "NJIB",
+      "PupStonks": "NPST",
+      "Sussy Blockas": "NSUS",
+      "The Protagonists": "NPRO",
+      "Young Hotties": "NYHT"
     }
   },
-  "NLTP-A": {
-    "Los Angeles": {
-      "The Land Before Timers": "ALBT"
-    },
-    "Central": {
-      "Bohemian Cap City": "ABCC",
-      "Miami Ballphins": "AMIA",
-      "Misaki Bombs": "AMSB",
-      "OD Future": "AODD",
-      "The Last Flairbenders": "ATLF"
-    },
-    "Chicago": {
-      "Legends of the Splittin' Temple": "ALST"
-    },
-    "Toronto": {
-      "Puparazzi": "APUP",
-      "WCYDinos": "ADNO"
-    },
-    "New York": {
-      "Weed the People": "AWTP"
-    }
-  },
-  "NLTP-B": {
-    "San Francisco": {
-      "Puparazzi": "BPUP"
-    },
-    "Los Angeles": {
-      "The Land Before Timers": "BLBT"
-    },
-    "Central": {
-      "Miami Ballphins": "BMIA",
-      "Misaki Bombs": "BMSB",
-      "OD Future": "BODD",
-      "The Last Flairbenders": "BTLF"
-    },
-    "Chicago": {
-      "Legends of the Splittin' Temple": "BLST",
-      "Weed the People": "BWTP",
-      "WCYDinos": "BDNO"
-    },
-    "New York": {
-      "Bohemian Cap City": "BBCC"
+  "Novice": {
+    "Default": {
+      "Red": "Red",
+      "Blue": "Blue"
     }
   }
 }
