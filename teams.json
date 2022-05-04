@@ -44,9 +44,21 @@
     }
   },
   "Novice": {
-    "Default": {
-      "Red": "Red",
-      "Blue": "Blue"
+    "Los Angeles": {
+      "Novice World Order": "ANWO"
+    },
+    "Central": {
+      "American Corner Story": "AACS",
+      "gODzilla vs. King Kahn": "AGKK",
+      "Holdin' Gate Warriors": "AHGW",
+      "Ree Gees": "AREE"
+    },
+    "Chicago": {
+      "Jack in the Blocks": "AJIB",
+      "The Ping Kongs": "ATPK"
+    },
+    "New York": {
+      "Miami Ballphins": "AMIA"
     }
   }
 }
