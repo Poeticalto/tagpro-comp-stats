@@ -16,29 +16,23 @@
     }
   },
   "Minors": {
-    "Juke Juice": {
-      "Blue Suede Poosts": "NBSP",
-      "Catalytic Cap Converters": "NCCC",
-      "Get Re or Die Tryin’": "NGRE",
-      "Holdin' Gate Warriors": "NHGW",
-      "Miami Ballphins": "NMIA",
-      "Rap Snitch tNISHes": "NRSN"
-    },
-    "Rolling Bomb": {
-      "Centra Limit Theorem": "NCLT",
+    "Blue": {
+      "Cherry Bomb": "NCHB",
       "Harlem GlobeBotters": "NHGB",
-      "Microphone Hunt": "NMIC",
-      "Returns of the Jedi": "NROJ",
-      "Tears for Spheres": "NTRS",
-      "ThunderCaps": "NTHC"
+      "The Land Before Timers": "NLBT",
+      "Legends of the Splittin Temple": "NLST",
+      "Mr. Morale and the Nub Steppers": "NMNS",
+      "Over the Pants Handoffs": "NOPH",
+      "Rune Scrimitars": "NRUN"
     },
-    "TagPro": {
+    "Red": {
       "Big Cap Rescue": "NBCR",
-      "Jack in the Blocks": "NJIB",
-      "PupStonks": "NPST",
-      "Sussy Blockas": "NSUS",
-      "The Protagonists": "NPRO",
-      "Young Hotties": "NYHT"
+      "Knights of the Round Tile": "NKRT",
+      "Respawnsiballs": "NRSP",
+      "Returns of the Jedi": "NRTJ",
+      "Tears for Spheres": "NTRS",
+      "The D4nkos": "NDNK",
+      "Weed the People": "NWTP"
     }
   },
   "Novice": {
