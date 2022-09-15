@@ -37,20 +37,20 @@
   },
   "Novice": {
     "Los Angeles": {
-      "Novice World Order": "ANWO"
+      "Land Before Timers": "ALBT",
+      "Respawnsiballs": "ARSP"
     },
     "Central": {
-      "American Corner Story": "AACS",
-      "gODzilla vs. King Kahn": "AGKK",
-      "Holdin' Gate Warriors": "AHGW",
-      "Ree Gees": "AREE"
+      "Mr. Morale and the Nub Steppers": "AMNS",
+      "Rune Scrimitars": "ARUN"
     },
     "Chicago": {
-      "Jack in the Blocks": "AJIB",
-      "The Ping Kongs": "ATPK"
+      "Legends of the Splittin Temple": "ALST",
+      "The Poke Balls": "APOK"
     },
     "New York": {
-      "Miami Ballphins": "AMIA"
+      "Harlami Globphins": "AHGP",
+      "Knights of the Round Tile": "AKRT"
     }
   }
 }
