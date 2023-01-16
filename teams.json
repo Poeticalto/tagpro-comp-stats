@@ -1,56 +1,30 @@
 {
-  "Leagues": {
-    "NA Competitive": ["Majors", "Minors", "Novice"],
-    "NA Tournaments": ["TPA"]
-  },
-  "Majors": {
-    "Dallas": {
-      "A Spheries of Unfortunate Prevents": "MSUP",
-      "Converse Ballstars": "MCBS",
-      "Harlem GlobeBotters": "MHGB",
-      "Holdin' Gate Warriors": "MHGW",
-      "Knights of the Round Tile": "MKRT",
-      "Los Ankeles Breakers": "MLAB",
-      "Respawnsiballs": "MRSP",
-      "Summoning Alt": "MALT"
-    }
-  },
-  "Minors": {
-    "Blue": {
-      "Cherry Bomb": "NCHB",
-      "Harlem GlobeBotters": "NHGB",
-      "The Land Before Timers": "NLBT",
-      "Legends of the Splittin Temple": "NLST",
-      "Mr. Morale and the Nub Steppers": "NMNS",
-      "Over the Pants Handoffs": "NOPH",
-      "Rune Scrimitars": "NRUN"
-    },
-    "Red": {
-      "Big Cap Rescue": "NBCR",
-      "Knights of the Round Tile": "NKRT",
-      "Respawnsiballs": "NRSP",
-      "Returns of the Jedi": "NRTJ",
-      "Tears for Spheres": "NTRS",
-      "The D4nkos": "NDNK",
-      "Weed the People": "NWTP"
-    }
-  },
-  "Novice": {
-    "Los Angeles": {
-      "Land Before Timers": "ALBT",
-      "Respawnsiballs": "ARSP"
-    },
-    "Central": {
-      "Mr. Morale and the Nub Steppers": "AMNS",
-      "Rune Scrimitars": "ARUN"
-    },
-    "Chicago": {
-      "Legends of the Splittin Temple": "ALST",
-      "The Poke Balls": "APOK"
-    },
-    "New York": {
-      "Harlami Globphins": "AHGP",
-      "Knights of the Round Tile": "AKRT"
-    }
-  }
+	"Leagues": {
+		"NA Competitive": ["Majors", "Minors", "Novice"],
+		"NA Tournaments": ["TPA"]
+	},
+	"Majors": {
+		"Dallas": {
+			"Converse Ballstars": "MCBS",
+			"Eternal Turtle": "METR",
+			"Holdin' Gate Warriors": "MHGW",
+			"Los Ankeles Breakers": "MLAB",
+			"Miami Ballphins": "MMIA",
+			"Mighty Ducks": "MTMD",
+			"Red (Taylor's Version)": "MRED",
+			"Respawnsiballs": "MRSP",
+			"Snipe Hunt": "MSNI",
+			"The Land Before Timers": "MLBT"
+		}
+	},
+	"Minors": {
+		"Red": {
+			"33852952": "264832359032"
+		}
+	},
+	"Novice": {
+		"Blue": {
+			"The Holy Seehawks": "Red"
+		}
+	}
 }
