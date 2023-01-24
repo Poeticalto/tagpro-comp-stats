@@ -63,6 +63,8 @@
     {"name": "Nuke (74521)","mapID": 74521,"prefix": "fm_id/"},
     {"name": "Willow 2 (69860)","mapID": 69860,"prefix": "fm_id/"},
     {"name": "Moon Base (74431)","mapID": 74431,"prefix": "fm_id/"},
-    {"name": "OTI MERALD (74491)","mapID": 74491,"prefix": "fm_id/"}
+    {"name": "OTI MERALD (74491)","mapID": 74491,"prefix": "fm_id/"},
+    {"name": "Joji (70118)","mapID": 70118,"prefix": "fm_id/"},
+    {"name": "Tetanic (74442)","mapID": 74442,"prefix": "fm_id/"}
   ]
 }
