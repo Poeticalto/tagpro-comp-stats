@@ -6,7 +6,7 @@
 	"Majors": {
 		"Dallas": {
 			"Converse Ballstars": "MCBS",
-			"Eternal Turtle": "METR",
+			"Eternal Turtle": "MTRT",
 			"Holdin' Gate Warriors": "MHGW",
 			"Los Ankeles Breakers": "MLAB",
 			"Miami Ballphins": "MMIA",
@@ -24,12 +24,12 @@
 			"Bottle Otters": "NBOT",
 			"Cap City in Blue": "NCCB",
 			"Converse Ballstars": "NCBS",
-			"Eternal Turtle": "NETR",
-			"Look What You Made Re Do (Taylor's Version)": "NLYD",
+			"Eternal Turtle": "NTRT",
+			"Look What You Made Re Do (Taylor's Version)": "NLOO",
 			"Nuclear Jukes": "NUKE",
 			"Over the Pants Handoffs": "NOPH",
-			"Pugrats": "NPUG",
-			"Pup Patrol": "NPPT",
+			"Pugrats": "NRAT",
+			"Pup Patrol": "NPPP",
 			"Reset Theory": "NRST",
 			"Respawnsiballs": "NRSP",
 			"Returns of the Jedi": "NRTJ",
@@ -45,8 +45,17 @@
 		}
 	},
 	"Novice": {
-		"Blue": {
-			"The Holy Seehawks": "Red"
+		"Central": {
+			"Arctag iceCaps": "AAIC",
+			"Converse Ballstars": "ACBS",
+			"Knights of the Round Tile": "AKRT",
+			"Nuclear Jukes": "AUKE",
+			"Returns of the Jedi": "ARTJ",
+			"The Land Before Timers": "ALBT"
+		},
+		"New York": {
+			"Miami Ballphins": "AMIA",
+			"Respawnsiballs": "ARSP"
 		}
 	}
 }
