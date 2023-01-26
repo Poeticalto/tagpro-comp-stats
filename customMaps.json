@@ -58,13 +58,18 @@
     {"name": "Willow (74490)","mapID": 74490,"prefix": "fm_id/"}
   ],
   "NALTP S29 Maps": [
-    {"name": "Jardim (OTI) (74430)","mapID": 74430,"prefix": "fm_id/"},
+    {"name": "Asido (75927)","mapID": 75927,"prefix": "fm_id/"},
     {"name": "Audacity 2 (74488)","mapID": 74488,"prefix": "fm_id/"},
-    {"name": "Nuke (74521)","mapID": 74521,"prefix": "fm_id/"},
-    {"name": "Willow 2 (69860)","mapID": 69860,"prefix": "fm_id/"},
-    {"name": "Moon Base (74431)","mapID": 74431,"prefix": "fm_id/"},
-    {"name": "OTI MERALD (74491)","mapID": 74491,"prefix": "fm_id/"},
+    {"name": "Catch-24 (74449)","mapID": 74449,"prefix": "fm_id/"},
+    {"name": "Jardim (OTI) (74430)","mapID": 74430,"prefix": "fm_id/"},
     {"name": "Joji (70118)","mapID": 70118,"prefix": "fm_id/"},
-    {"name": "Tetanic (74442)","mapID": 74442,"prefix": "fm_id/"}
+    {"name": "Moon Base (74431)","mapID": 74431,"prefix": "fm_id/"},
+    {"name": "Nuke (74521)","mapID": 74521,"prefix": "fm_id/"},
+    {"name": "OTI MERALD (74491)","mapID": 74491,"prefix": "fm_id/"},
+    {"name": "Pretzel (71291)","mapID": 71291,"prefix": "fm_id/"},
+    {"name": "Tetanic (74442)","mapID": 74442,"prefix": "fm_id/"},
+    {"name": "Thicket 2 (74452)","mapID": 74452,"prefix": "fm_id/"},
+    {"name": "Vicarious (72351)","mapID": 72351,"prefix": "fm_id/"},
+    {"name": "Willow 2 (69860)","mapID": 69860,"prefix": "fm_id/"}
   ]
 }
