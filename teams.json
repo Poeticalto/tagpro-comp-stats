@@ -18,44 +18,29 @@
 		}
 	},
 	"Minors": {
-		"Dallas": {
-			"A Blockwork Orange": "NABO",
-			"Blue (Da Ba Dee)": "NBLU",
-			"Bottle Otters": "NBOT",
+		"Blue": {
+			"Arctag iceCaps": "NAIC",
 			"Cap City in Blue": "NCCB",
 			"Converse Ballstars": "NCBS",
-			"Eternal Turtle": "NTRT",
-			"Look What You Made Re Do (Taylor's Version)": "NLOO",
-			"Nuclear Jukes": "NUKE",
-			"Over the Pants Handoffs": "NOPH",
-			"Pugrats": "NRAT",
-			"Pup Patrol": "NPPP",
-			"Reset Theory": "NRST",
-			"Respawnsiballs": "NRSP",
+			"Harlem Globebotters": "NHGB",
 			"Returns of the Jedi": "NRTJ",
-			"Ron Stoppaballs": "NRON",
-			"The Green Beans": "NGBS",
-			"The Kneecappers": "NKNC",
-			"The Land Before Timers": "NLBT",
-			"The Last Flairbenders": "NLFB",
-			"The Trailer Park Balls": "NTPB"
+			"Scrim Reapers": "NSCR",
+			"Stranger Pings": "NSRP"
 		},
 		"Red": {
-			"33852952": "264832359032"
+			"Bottle Otters": "NBOT",
+			"Iron Chef French": "NICF",
+			"Land Before Timers": "NLBT",
+			"Miami Ballphins": "NMIA",
+			"Molotov Blocktails": "NMBT",
+			"Nuclear Jukes": "NNUK",
+			"Over the Pants Handoffs": "NOPH",
+			"The Nights Watch": "NTNW"
 		}
 	},
 	"Novice": {
 		"Central": {
-			"Arctag iceCaps": "AAIC",
-			"Converse Ballstars": "ACBS",
-			"Knights of the Round Tile": "AKRT",
-			"Nuclear Jukes": "AUKE",
-			"Returns of the Jedi": "ARTJ",
-			"The Land Before Timers": "ALBT"
-		},
-		"New York": {
-			"Miami Ballphins": "AMIA",
-			"Respawnsiballs": "ARSP"
+			"test": "hi"
 		}
 	}
 }
