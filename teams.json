@@ -39,8 +39,15 @@
 		}
 	},
 	"Novice": {
-		"Central": {
-			"test": "hi"
+		"Red": {
+			"Arctag iceCaps": "AAIC",
+			"Converse Ballstars": "ACBS",
+			"Holy Handoff Grenades": "AHHG",
+			"Miami Ballphins": "AMIA",
+			"Nubmare on Oak Street": "ANOS",
+			"Nuclear Jukes": "ANUK",
+			"Portland Tile Blazers": "APTB",
+			"Puparazzi": "APUP"
 		}
 	}
 }
