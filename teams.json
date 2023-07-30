@@ -1,53 +1,46 @@
 {
 	"Leagues": {
-		"NA Competitive": ["Majors", "Minors", "Novice"],
+		"NA Competitive": ["NFTL-A","NFTL-B"],
 		"NA Tournaments": ["TPA"]
 	},
-	"Majors": {
-		"Dallas": {
-			"Arctag IceCaps": "MAIC",
-			"Converse Ballstars": "MCBS",
-			"Holdin' Gate Warriors": "MHGW",
-			"Holy Handoff Grenades": "MHHG",
-			"Iron Chef": "MICJ",
-			"Los Ankeles Breakers": "MLAB",
-			"Miami Ballphins": "MMIA",
-			"Nuclear Jukes": "MNUK",
-			"Okay Hens": "MOKN",
-			"Veggie Tiles": "MVGT"
-		}
-	},
-	"Minors": {
-		"Blue": {
-			"Arctag iceCaps": "NAIC",
-			"Cap City in Blue": "NCCB",
-			"Converse Ballstars": "NCBS",
-			"Harlem Globebotters": "NHGB",
-			"Returns of the Jedi": "NRTJ",
-			"Scrim Reapers": "NSCR",
-			"Stranger Pings": "NSRP"
+	"NFTL-A": {
+		"Los Angeles": {
+			"Jukeblocks Heroes": "TJBH"
 		},
-		"Red": {
-			"Bottle Otters": "NBOT",
-			"Iron Chef French": "NICF",
-			"Land Before Timers": "NLBT",
-			"Miami Ballphins": "NMIA",
-			"Molotov Blocktails": "NMBT",
-			"Nuclear Jukes": "NNUK",
-			"Over the Pants Handoffs": "NOPH",
-			"The Nights Watch": "NTNW"
+		"Dallas": {
+			"Boosting Ballacudas": "TBBS",
+			"Converse Ballstars": "TCBS",
+			"Rektiles": "TRKT"
+		},
+		"Chicago": {
+			"Djin and Jukes": "TDJN",
+			"Fire Breathing Rubber Duckies": "TFBD",
+			"Portland Tile Blazers": "TPTB",
+			"Respawnsiballs": "TRSP",
+			"Returns of the Jedi": "TRTJ"
+		},
+		"Toronto": {
+			"Imagine Taggins": "TTAG"
 		}
 	},
-	"Novice": {
-		"Red": {
-			"Arctag iceCaps": "AAIC",
-			"Converse Ballstars": "ACBS",
-			"Holy Handoff Grenades": "AHHG",
-			"Miami Ballphins": "AMIA",
-			"Nubmare on Oak Street": "ANOS",
-			"Nuclear Jukes": "ANUK",
-			"Portland Tile Blazers": "APTB",
-			"Puparazzi": "APUP"
+	"NFTL-B": {
+		"Los Angeles": {
+			"877-CAPSNOW": "U877"
+		},
+		"Dallas": {
+			"Boosting Ballacudas": "UBBS",
+			"Converse Ballstars": "UCBS",
+			"Portland Tile Blazers": "UPTB",
+			"Puparazzi": "UPUP"
+		},
+		"Chicago": {
+			"Respawnsiballs": "URSP"
+		},
+		"New York": {
+			"Jukeblocks Heroes": "UJBH"
+		},
+		"Atlanta": {
+			"Returns of the Jedi": "URTJ"
 		}
 	}
 }
