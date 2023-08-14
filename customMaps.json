@@ -57,9 +57,12 @@
   ],
   "NFTL S9 Maps": [
     {"name":"Arti (74415)","mapID":74415,"prefix":"fm_id/"},
+    {"name":"Bulldog 2023 (75197)","mapID":75197,"prefix":"fm_id/"},
     {"name":"Carrera (75129)","mapID":75129,"prefix":"fm_id/"},
     {"name":"Gumbo (75114)","mapID":75114,"prefix":"fm_id/"},
+    {"name":"Lockhart (76794)","mapID":76794,"prefix":"fm_id/"},
     {"name":"Plasma (75194)","mapID":75194,"prefix":"fm_id/"},
+    {"name":"REDLINE (74423)","mapID":74423,"prefix":"fm_id/"},
     {"name":"Wamble (75131)","mapID":75131,"prefix":"fm_id/"},
     {"name":"Whiplash (75132)","mapID":75132,"prefix":"fm_id/"},
     {"name":"Wombo Combo (75193)","mapID":75193,"prefix":"fm_id/"}
