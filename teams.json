@@ -1,46 +1,18 @@
 {
 	"Leagues": {
-		"NA Competitive": ["NFTL-A","NFTL-B"],
+		"NA Competitive": ["Majors"],
 		"NA Tournaments": ["TPA"]
 	},
-	"NFTL-A": {
-		"Los Angeles": {
-			"Jukeblocks Heroes": "TJBH"
-		},
+	"Majors": {
 		"Dallas": {
-			"Boosting Ballacudas": "TBBS",
-			"Converse Ballstars": "TCBS",
-			"Rektiles": "TRKT"
-		},
-		"Chicago": {
-			"Djin and Jukes": "TDJN",
-			"Fire Breathing Rubber Duckies": "TFBD",
-			"Portland Tile Blazers": "TPTB",
-			"Respawnsiballs": "TRSP",
-			"Returns of the Jedi": "TRTJ"
-		},
-		"Toronto": {
-			"Imagine Taggins": "TTAG"
-		}
-	},
-	"NFTL-B": {
-		"Los Angeles": {
-			"877-CAPSNOW": "U877"
-		},
-		"Dallas": {
-			"Boosting Ballacudas": "UBBS",
-			"Converse Ballstars": "UCBS",
-			"Portland Tile Blazers": "UPTB",
-			"Puparazzi": "UPUP"
-		},
-		"Chicago": {
-			"Respawnsiballs": "URSP"
-		},
-		"New York": {
-			"Jukeblocks Heroes": "UJBH"
-		},
-		"Atlanta": {
-			"Returns of the Jedi": "URTJ"
+			"ArcTag IceCaps": "MAIC",
+			"Banchester United": "MUTD",
+			"Converse Ballstars": "MCBS",
+			"Good Read You! Block Enterer": "MGRY",
+			"Miami Ballphins": "MMIA",
+			"Over the Pants Handoffs": "MOPH",
+			"The Holy Seehawks": "MTHS",
+			"The Way of Pings": "MWOP"
 		}
 	}
 }
