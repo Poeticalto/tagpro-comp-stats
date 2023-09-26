@@ -1,6 +1,6 @@
 {
 	"Leagues": {
-		"NA Competitive": ["Majors"],
+		"NA Competitive": ["Majors", "Minors"],
 		"NA Tournaments": ["TPA"]
 	},
 	"Majors": {
@@ -13,6 +13,22 @@
 			"Over the Pants Handoffs": "MOPH",
 			"The Holy Seehawks": "MTHS",
 			"The Way of Pings": "MWOP"
+		}
+	},
+	"Minors": {
+		"Dallas": {
+			"Big Red Boat": "NBRB",
+			"Boosting Ballacudas": "NBBS",
+			"drewfa's Oompa Loompas": "NDOL",
+			"EREBCREBBCREAMC(d)": "NBGL",
+			"H&R Blox": "NHRB",
+			"Linoleum Tile": "NLIN",
+			"Miami Ballphins": "NMIA",
+			"Nuclear Jukes": "NNUK",
+			"Over the Pants Handoffs": "NOPH",
+			"The Land Before Timers": "NLBT",
+			"The Way of Pings": "NWOP",
+			"Weed the People": "NWTP"
 		}
 	}
 }
