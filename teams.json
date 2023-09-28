@@ -1,6 +1,6 @@
 {
 	"Leagues": {
-		"NA Competitive": ["Majors", "Minors"],
+		"NA Competitive": ["Majors", "Minors", "Novice"],
 		"NA Tournaments": ["TPA"]
 	},
 	"Majors": {
@@ -22,13 +22,24 @@
 			"drewfa's Oompa Loompas": "NDOL",
 			"EREBCREBBCREAMC(d)": "NBGL",
 			"H&R Blox": "NHRB",
-			"Linoleum Tile": "NLIN",
+			"Linoleum Tile": "NLIT",
 			"Miami Ballphins": "NMIA",
 			"Nuclear Jukes": "NNUK",
 			"Over the Pants Handoffs": "NOPH",
 			"The Land Before Timers": "NLBT",
 			"The Way of Pings": "NWOP",
 			"Weed the People": "NWTP"
+		}
+	},
+	"Novice": {
+		"Dallas": {
+			"Arctag iceCaps": "AAIC",
+			"Boosting Ballacudas": "ABBS",
+			"EREBCREBBCREAMC(d)": "ABGL",
+			"Miami Ballphins": "AMIA",
+			"Microphone Hawks": "AAWK",
+			"Respawnsiballs": "ARSP",
+			"The Land Before Timers": "ALBT"
 		}
 	}
 }
