@@ -4,42 +4,27 @@
 		"NA Tournaments": ["TPA"]
 	},
 	"Majors": {
-		"Dallas": {
-			"ArcTag IceCaps": "MAIC",
-			"Banchester United": "MUTD",
-			"Converse Ballstars": "MCBS",
-			"Good Read You! Block Enterer": "MGRY",
+		"Chicago": {
+			"A Blockwork Orange": "MABO",
+			"Avocado Toastys": "MAVO",
+			"Chrome Heart Tags": "MCHT",
+			"Holdin' Gate Warriors": "MHGW",
+			"Mickey Mouse Ping": "MMMP",
 			"Miami Ballphins": "MMIA",
-			"Over the Pants Handoffs": "MOPH",
-			"The Holy Seehawks": "MTHS",
-			"The Way of Pings": "MWOP"
+			"The Way of Pings": "MWOP",
+			"Toronto Captors": "MTOC",
+			"Taco Dogs": "MTAD",
+			"Snipe Hunt": "MSNI"
 		}
 	},
 	"Minors": {
-		"Dallas": {
-			"Big Red Boat": "NBRB",
-			"Boosting Ballacudas": "NBBS",
-			"drewfa's Oompa Loompas": "NDOL",
-			"EREBCREBBCREAMC(d)": "NBGL",
-			"H&R Blox": "NHRB",
-			"Linoleum Tile": "NLIT",
-			"Miami Ballphins": "NMIA",
-			"Nuclear Jukes": "NNUK",
-			"Over the Pants Handoffs": "NOPH",
-			"The Land Before Timers": "NLBT",
-			"The Way of Pings": "NWOP",
-			"Weed the People": "NWTP"
+		"Chicago": {
+			"TagPro Athletes": "NTPA"
 		}
 	},
 	"Novice": {
-		"Dallas": {
-			"Arctag iceCaps": "AAIC",
-			"Boosting Ballacudas": "ABBS",
-			"EREBCREBBCREAMC(d)": "ABGL",
-			"Miami Ballphins": "AMIA",
-			"Microphone Hawks": "AAWK",
-			"Respawnsiballs": "ARSP",
-			"The Land Before Timers": "ALBT"
+		"Chicago": {
+			"TagPro Athletes": "NTPA"
 		}
 	}
 }
