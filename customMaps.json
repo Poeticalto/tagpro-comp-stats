@@ -39,32 +39,30 @@
     {"name":"Yore (62447)","mapID":62447,"prefix":"fm_id/"}
   ],
   "TPM CTFNA Maps": [
-    {"name":"Apistat (76399)","mapID":76399,"prefix":"fm_id/"},
     {"name":"Asida (75927)","mapID":75927,"prefix":"fm_id/"},
     {"name":"Audacity 2 (74488)","mapID":74488,"prefix":"fm_id/"},
-    {"name":"Bravado (77559)","mapID":77559,"prefix":"fm_id/"},
-    {"name":"Calypso (78311)","mapID":78311,"prefix":"fm_id/"},
+    {"name":"Bravado 2 (79624)","mapID":79624,"prefix":"fm_id/"},
+    {"name":"Kardashev 2 (80492)","mapID":80492,"prefix":"fm_id/"},
     {"name":"Milano 2 (77312)","mapID":77312,"prefix":"fm_id/"},
     {"name":"Moon Base (74431)","mapID":74431,"prefix":"fm_id/"},
     {"name":"Oak (74508)","mapID":74508,"prefix":"fm_id/"},
     {"name":"OTI Jardim (77164)","mapID":77164,"prefix":"fm_id/"},
     {"name":"OTI MERALD (74491)","mapID":74491,"prefix":"fm_id/"},
+    {"name":"Sardonica (80147)","mapID":80147,"prefix":"fm_id/"},
+    {"name":"Starlight (80770)","mapID":80770,"prefix":"fm_id/"},
     {"name":"Sugar Hill (74444)","mapID":74444,"prefix":"fm_id/"},
-    {"name":"Thicket 2 (74452)","mapID":74452,"prefix":"fm_id/"},
     {"name":"Transilio 2022 (74494)","mapID":74494,"prefix":"fm_id/"},
-    {"name":"Waterbed (76542)","mapID":76542,"prefix":"fm_id/"},
     {"name":"Willow (74490)","mapID":74490,"prefix":"fm_id/"}
   ],
-  "NFTL S9 Maps": [
-    {"name":"Arti (74415)","mapID":74415,"prefix":"fm_id/"},
-    {"name":"Bulldog 2023 (75197)","mapID":75197,"prefix":"fm_id/"},
-    {"name":"Carrera (75129)","mapID":75129,"prefix":"fm_id/"},
-    {"name":"Gumbo (75114)","mapID":75114,"prefix":"fm_id/"},
-    {"name":"Lockhart (76794)","mapID":76794,"prefix":"fm_id/"},
-    {"name":"Plasma (75194)","mapID":75194,"prefix":"fm_id/"},
-    {"name":"REDLINE (74423)","mapID":74423,"prefix":"fm_id/"},
-    {"name":"Wamble (75131)","mapID":75131,"prefix":"fm_id/"},
-    {"name":"Whiplash (75132)","mapID":75132,"prefix":"fm_id/"},
-    {"name":"Wombo Combo (75193)","mapID":75193,"prefix":"fm_id/"}
+  "NALTP S32 Maps": [
+    {"name":"Asida (75927)","mapID":75927,"prefix":"fm_id/"},
+    {"name":"Audacity 2 (74488)","mapID":74488,"prefix":"fm_id/"},
+    {"name":"Moon Base (74431)","mapID":74431,"prefix":"fm_id/"},
+    {"name":"OTI Jardim (77164)","mapID":77164,"prefix":"fm_id/"},
+    {"name":"OTI MERALD (74491)","mapID":74491,"prefix":"fm_id/"},
+    {"name":"Rush 2 (64073)","mapID":64073,"prefix":"fm_id/"},
+    {"name":"Sugar Hill (74444)","mapID":74444,"prefix":"fm_id/"},
+    {"name":"Transilio 2022 (74494)","mapID":74494,"prefix":"fm_id/"},
+    {"name":"Willow (74490)","mapID":74490,"prefix":"fm_id/"} 
   ]
 }
