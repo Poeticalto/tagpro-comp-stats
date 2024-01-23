@@ -54,6 +54,37 @@
     {"name":"Transilio 2022 (74494)","mapID":74494,"prefix":"fm_id/"},
     {"name":"Willow (74490)","mapID":74490,"prefix":"fm_id/"}
   ],
+  "Majors Home Maps": [
+    {"name":"Catch-24 (74449)","mapID":74449,"prefix":"fm_id/"},
+    {"name":"Cedar (63247)","mapID":63247,"prefix":"fm_id/"},
+    {"name":"Haste (74460)","mapID":74460,"prefix":"fm_id/"},
+    {"name":"Kardashev 2 (80492)","mapID":80492,"prefix":"fm_id/"},
+    {"name":"Milano 2 (77548)","mapID":77548,"prefix":"fm_id/"},
+    {"name":"Mosaic (81323)","mapID":81323,"prefix":"fm_id/"},
+    {"name":"Perra (81307)","mapID":81307,"prefix":"fm_id/"},
+    {"name":"Sardonica (80147)","mapID":80147,"prefix":"fm_id/"},
+    {"name":"Strawberry! (81357)","mapID":81357,"prefix":"fm_id/"}
+  ],
+  "Minors Home Maps": [
+    {"name":"A Snack-type Map (70143)","mapID":70143,"prefix":"fm_id/"},
+    {"name":"Cedar 1.9 (74443)","mapID":74443,"prefix":"fm_id/"},
+    {"name":"Corners v.90 v.2 (81368)","mapID":81368,"prefix":"fm_id/"},
+    {"name":"Distortion 2 (81358)","mapID":81358,"prefix":"fm_id/"},
+    {"name":"GeoKoala (75185)","mapID":75185,"prefix":"fm_id/"},
+    {"name":"Haste (74460)","mapID":74460,"prefix":"fm_id/"},
+    {"name":"Joji 2021 (69714)","mapID":69714,"prefix":"fm_id/"},
+    {"name":"Kardashev 2 (80492)","mapID":80492,"prefix":"fm_id/"},
+    {"name":"Market (81365)","mapID":81365,"prefix":"fm_id/"},
+    {"name":"Milano 2 (77548)","mapID":77548,"prefix":"fm_id/"},
+    {"name":"Moai (81040)","mapID":81040,"prefix":"fm_id/"},
+    {"name":"Oak (74508)","mapID":74508,"prefix":"fm_id/"},
+    {"name":"Rush 2 (65411)","mapID":65411,"prefix":"fm_id/"},
+    {"name":"Scorpio 2023 (76537)","mapID":76537,"prefix":"fm_id/"},
+    {"name":"Smirk (4384)","mapID":4384,"prefix":"fm_id/"},
+    {"name":"Sugar Hill (74444)","mapID":74444,"prefix":"fm_id/"},
+    {"name":"Vardo 2024 (81367)","mapID":81367,"prefix":"fm_id/"},
+    {"name":"Volition (81261)","mapID":81261,"prefix":"fm_id/"}
+  ],
   "NALTP S32 Maps": [
     {"name":"Asida (75927)","mapID":75927,"prefix":"fm_id/"},
     {"name":"Audacity 2 (74488)","mapID":74488,"prefix":"fm_id/"},
