@@ -1,56 +1,54 @@
 {
-  "Leagues": {
-    "NA Competitive": ["Majors", "Minors", "Novice"],
-    "NA Tournaments": ["TPA"]
-  },
-  "Majors": {
-    "Dallas": {
-      "A Spheries of Unfortunate Prevents": "MSUP",
-      "Converse Ballstars": "MCBS",
-      "Harlem GlobeBotters": "MHGB",
-      "Holdin' Gate Warriors": "MHGW",
-      "Knights of the Round Tile": "MKRT",
-      "Los Ankeles Breakers": "MLAB",
-      "Respawnsiballs": "MRSP",
-      "Summoning Alt": "MALT"
-    }
-  },
-  "Minors": {
-    "Blue": {
-      "Cherry Bomb": "NCHB",
-      "Harlem GlobeBotters": "NHGB",
-      "The Land Before Timers": "NLBT",
-      "Legends of the Splittin Temple": "NLST",
-      "Mr. Morale and the Nub Steppers": "NMNS",
-      "Over the Pants Handoffs": "NOPH",
-      "Rune Scrimitars": "NRUN"
-    },
-    "Red": {
-      "Big Cap Rescue": "NBCR",
-      "Knights of the Round Tile": "NKRT",
-      "Respawnsiballs": "NRSP",
-      "Returns of the Jedi": "NRTJ",
-      "Tears for Spheres": "NTRS",
-      "The D4nkos": "NDNK",
-      "Weed the People": "NWTP"
-    }
-  },
-  "Novice": {
-    "Los Angeles": {
-      "Land Before Timers": "ALBT",
-      "Respawnsiballs": "ARSP"
-    },
-    "Central": {
-      "Mr. Morale and the Nub Steppers": "AMNS",
-      "Rune Scrimitars": "ARUN"
-    },
-    "Chicago": {
-      "Legends of the Splittin Temple": "ALST",
-      "The Poke Balls": "APOK"
-    },
-    "New York": {
-      "Harlami Globphins": "AHGP",
-      "Knights of the Round Tile": "AKRT"
-    }
-  }
+	"Leagues": {
+		"NA Competitive": ["Majors", "Minors", "Novice"],
+		"NA Tournaments": ["TPA"]
+	},
+	"Majors": {
+		"Chicago": {
+			"A Blockwork Orange": "MABO",
+			"Avocado Toastys": "MAVO",
+			"Chrome Heart Tags": "MCHT",
+			"Holdin' Gate Warriors": "MHGW",
+			"Mickey Mouse Ping": "MMMP",
+			"Miami Ballphins": "MMIA",
+			"The Way of Pings": "MWOP",
+			"Toronto Captors": "MTOC",
+			"Taco Dogs": "MTAD",
+			"Snipe Hunt": "MSNI"
+		}
+	},
+	"Minors": {
+		"Chicago": {
+			"Ball Too Well": "NBTW",
+			"Blocks 'n' Tea Party": "NBTP",
+			"Boostie Boys": "NBOO",
+			"CB's TG Cap Train": "NTCT",
+			"Converse Ballstars": "NCBS",
+			"Harlem GlobeBotters": "NHGB",
+			"House Freedom Blaucus": "NHFB",
+			"Insane Cap Posse": "NICP",
+			"Mercury Revolutions": "NMRV",
+			"Microphone Hunt": "NMIC",
+			"Nuclear Jukes": "NNUK",
+			"Over the Pants Handoffs": "NOPH",
+			"Power Pup Girls": "NPPG",
+			"Rotatos": "NROT",
+			"The Green Beans": "NTGB",
+			"The Pop Fustys": "NBTD",
+			"The Popranos": "NHBO",
+			"Weed the People": "NWTP"
+		}
+	},
+	"Novice": {
+		"Chicago": {
+			"American Corner Story": "AACS",
+			"ArcTag IceCaps": "AAIC",
+			"Boostin Ballacudas": "ABBS",
+			"Chicago Pubs": "ACHI",
+			"Converse Ballstars": "ACBS",
+			"Mercury Revolutions": "AMRV",
+			"Miami Ballphins": "AMIA",
+			"Mic Hawks": "AMIC"
+		}
+	}
 }
